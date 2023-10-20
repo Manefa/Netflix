@@ -49,6 +49,8 @@
 
     @extends('layouts.slider')
 
+    @yield('contenu')
+
     <!-- Content - OPEN -->
     <div class="container-lg margin-top margin-bottom">
 
