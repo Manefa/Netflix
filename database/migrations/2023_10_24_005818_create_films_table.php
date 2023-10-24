@@ -17,11 +17,13 @@ return new class extends Migration
             $table->string('resume', 255);
             $table->string('duree', 255);
             $table->year('annee_de_production');
+            $table->string('brand');
             $table->unsignedBigInteger('realisateur_id');
             $table->unsignedBigInteger('producteur_id');
-            $table->string('lienfilm', 255);
-            $table->string('pochetteurl', 255);
-            $table->string('note', 255);
+            $table->string('lien_film', 255);
+            $table->string('pochette_url', 255);
+            $table->integer('cote');
+            $table->string('notation');
             $table->foreignId('genre_id')->constrained();
             $table->timestamps();
 
