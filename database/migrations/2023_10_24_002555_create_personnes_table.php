@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('date_naissance');
             $table->string('photo', 255);
             $table->string('role_principal', 255);
-            $table->string('biographie');
+            $table->string('biographie', 2000);
             $table->timestamps();
         });
     }

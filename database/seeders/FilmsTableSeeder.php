@@ -158,6 +158,22 @@ class FilmsTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'titre' => 'L\'exorciste - Devotion',
+                'resume' => 'Depuis que sa femme, enceinte, a perdu la vie au cours d’un séisme en Haïti douze ans plus tôt, Victor Fielding élève, seul, leur fille Angela. Un jour, Angela et son amie Katherine disparaissent dans les bois avant de refaire surface 72 heures plus tard sans le moindre souvenir de ce qui leur est arrivé.',
+                'duree' => '2h49m',
+                'annee_de_production' => 2023,
+                'brand' => 'Hoolywood',
+                'realisateur_id' => 1, // ID du réalisateur
+                'producteur_id' => 8, // ID du producteur
+                'lienfilm' => 'https://www.example.com/interstellar.mp4',
+                'pochetteurl' => 'https://www.example.com/interstellar.jpg',
+                'cote' => 80,
+                'notation' => '14 ans et plus',
+                'genre_id' => 6, // ID du genre
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
     

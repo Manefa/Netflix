@@ -47,6 +47,16 @@
 <body>
     @extends('layouts.app')
 
+    @if (count($films))
+        @foreach ($films as $film)
+            <li>{{ $film->titre }}</li>
+            <li>{{ $film->resume }}</li>
+        @endforeach
+    @else
+        <p>Il n'y a aucun film.</p>
+    @endif
+
+
     <!-- Slider - OPEN -->
     <div id="mainCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -63,18 +73,22 @@
                     <h1> Stranger Things </h1>
                     <p> <a href="#">2016</a> | +16 | 3 Seasons | <a href="#">TV Shows</a> </p>
                     <p class="margin-top-under-sm">
-                        When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.
+                        When a young boy vanishes, a small town uncovers a mystery involving secret experiments,
+                        terrifying supernatural forces and one strange little girl.
                     </p>
                     <p>
-                        Starring: <a href="#">Winona Ryder</a>, <a href="#">David Harbour</a>, <a href="#">Finn Wolfhard</a>
+                        Starring: <a href="#">Winona Ryder</a>, <a href="#">David Harbour</a>, <a
+                            href="#">Finn Wolfhard</a>
                     </p>
                     <p> Creators: <a href="#">The Duffer Brothers</a> </p>
                     <div class="margin-top-under-sm">
-                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button" aria-pressed="true">
+                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
+                            aria-pressed="true">
                             <img src="media/icons/play.png" width="20" alt="">
                             Watch
                         </a>
-                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button" aria-pressed="true">
+                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button"
+                            aria-pressed="true">
                             <img src="media/icons/plus.png" width="15" alt="">
                             Add List
                         </a>
@@ -90,18 +104,22 @@
                     <h1> Money Heist </h1>
                     <p> <a href="#">2017</a> | +16 | 3 Seasons | <a href="#">TV Shows</a> </p>
                     <p class="margin-top-under-sm">
-                        Eight thieves take hostages and lock themselves in the Royal Mint of Spain as a criminal mastermind manipulates the police to carry out his plan.
+                        Eight thieves take hostages and lock themselves in the Royal Mint of Spain as a criminal
+                        mastermind manipulates the police to carry out his plan.
                     </p>
                     <p>
-                        Starring: <a href="#">Úrsula Corberó</a>, <a href="#">Álvaro Morte</a>, <a href="#">Pedro Alonso</a>
+                        Starring: <a href="#">Úrsula Corberó</a>, <a href="#">Álvaro Morte</a>, <a
+                            href="#">Pedro Alonso</a>
                     </p>
                     <p> Creators: <a href="#">Álex Pina</a> </p>
                     <div class="margin-top-under-sm">
-                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button" aria-pressed="true">
+                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
+                            aria-pressed="true">
                             <img src="media/icons/play.png" width="20" alt="">
                             Watch
                         </a>
-                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button" aria-pressed="true">
+                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button"
+                            aria-pressed="true">
                             <img src="media/icons/plus.png" width="15" alt="">
                             Add List
                         </a>
@@ -117,18 +135,22 @@
                     <h1> The Witcher </h1>
                     <p> <a href="#">2019</a> | +16 | 1 Season | <a href="#">TV Shows</a> </p>
                     <p class="margin-sm">
-                        Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.
+                        Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent
+                        world where people often prove more wicked than beasts.
                     </p>
                     <p>
-                        Starring: <a href="#">Henry Cavill</a>, <a href="#">Anya Chalotra</a>, <a href="#">Freya Allan</a>
+                        Starring: <a href="#">Henry Cavill</a>, <a href="#">Anya Chalotra</a>, <a
+                            href="#">Freya Allan</a>
                     </p>
                     <p> Creators: <a href="#">Lauren Schmidt Hissrich</a> </p>
                     <div class="margin-top-under-sm">
-                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button" aria-pressed="true">
+                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
+                            aria-pressed="true">
                             <img src="media/icons/play.png" width="20" alt="">
                             Watch
                         </a>
-                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button" aria-pressed="true">
+                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button"
+                            aria-pressed="true">
                             <img src="media/icons/plus.png" width="15" alt="">
                             Add List
                         </a>
@@ -146,25 +168,29 @@
 
         <!-- Tabs nav - OPEN -->
         <nav class="nav nav-fill nav-pills" id="pills-tab" role="tablist">
-            <a class="nav-item nav-link active" id="trend-tab" data-toggle="pill" href="#trend" role="tab" aria-controls="trend-tab" aria-selected="true">
+            <a class="nav-item nav-link active" id="trend-tab" data-toggle="pill" href="#trend" role="tab"
+                aria-controls="trend-tab" aria-selected="true">
                 <div class="icon-nav">
                     <img src="media/icons/trend.png" width="20" alt="" class="margin-right-sm">
                     Trends Now
                 </div>
             </a>
-            <a class="nav-item nav-link" id="popular-tab" data-toggle="pill" href="#popular" role="tab" aria-controls="popular-tab" aria-selected="false">
+            <a class="nav-item nav-link" id="popular-tab" data-toggle="pill" href="#popular" role="tab"
+                aria-controls="popular-tab" aria-selected="false">
                 <div class="icon-nav">
                     <img src="media/icons/fire.png" width="15" alt="" class="margin-right-sm">
                     Popular
                 </div>
             </a>
-            <a class="nav-item nav-link" id="new-tab" data-toggle="pill" href="#new" role="tab" aria-controls="new-tab" aria-selected="false">
+            <a class="nav-item nav-link" id="new-tab" data-toggle="pill" href="#new" role="tab"
+                aria-controls="new-tab" aria-selected="false">
                 <div class="icon-nav">
                     <img src="media/icons/clock.png" width="15" alt="" class="margin-right-sm">
                     New
                 </div>
             </a>
-            <a class="nav-item nav-link" id="oscars-tab" data-toggle="pill" href="#oscars" role="tab" aria-controls="oscars-tab" aria-selected="false">
+            <a class="nav-item nav-link" id="oscars-tab" data-toggle="pill" href="#oscars" role="tab"
+                aria-controls="oscars-tab" aria-selected="false">
                 <div class="icon-nav">
                     <img src="media/icons/oscars.png" width="15" alt="" class="margin-right-sm">
                     Oscars 2020
@@ -177,10 +203,13 @@
         <div class="tab-content" id="myTabContent">
 
             <!-- Trend tab - OPEN -->
-            <div class="margin-top-under-sm tab-pane fade show active" id="trend" role="tabpanel" aria-labelledby="trend-tab">
+            <div class="margin-top-under-sm tab-pane fade show active" id="trend" role="tabpanel"
+                aria-labelledby="trend-tab">
 
                 <!-- Carousel - OPEN -->
-                <div class="carousel" data-flickity='{ "groupCells": true, "cellAlign": "center", "pageDots": false, "wrapAround": true, "draggable": false }' style="height: 400px">
+                <div class="carousel"
+                    data-flickity='{ "groupCells": true, "cellAlign": "center", "pageDots": false, "wrapAround": true, "draggable": false }'
+                    style="height: 400px">
 
                     <!-- The Irishman - OPEN -->
                     <div class="carousel-cell">
@@ -201,17 +230,20 @@
                                 </a>
                             </div>
                             <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt="" style="padding-bottom: 3px">
+                                <img src="media/icons/star.png" width="10" alt=""
+                                    style="padding-bottom: 3px">
                                 8.0
                             </div>
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info
                                 </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/play.png" width="10" alt="">
                                     Watch
                                 </a>
@@ -239,17 +271,20 @@
                                 </a>
                             </div>
                             <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt="" style="padding-bottom: 3px">
+                                <img src="media/icons/star.png" width="10" alt=""
+                                    style="padding-bottom: 3px">
                                 8.6
                             </div>
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info
                                 </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/play.png" width="10" alt="">
                                     Watch
                                 </a>
@@ -277,17 +312,20 @@
                                 </a>
                             </div>
                             <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt="" style="padding-bottom: 3px">
+                                <img src="media/icons/star.png" width="10" alt=""
+                                    style="padding-bottom: 3px">
                                 8.5
                             </div>
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info
                                 </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/play.png" width="10" alt="">
                                     Watch
                                 </a>
@@ -315,17 +353,20 @@
                                 </a>
                             </div>
                             <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt="" style="padding-bottom: 3px">
+                                <img src="media/icons/star.png" width="10" alt=""
+                                    style="padding-bottom: 3px">
                                 7.7
                             </div>
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info
                                 </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/play.png" width="10" alt="">
                                     Watch
                                 </a>
@@ -353,17 +394,20 @@
                                 </a>
                             </div>
                             <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt="" style="padding-bottom: 3px">
+                                <img src="media/icons/star.png" width="10" alt=""
+                                    style="padding-bottom: 3px">
                                 7.8
                             </div>
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info
                                 </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/play.png" width="10" alt="">
                                     Watch
                                 </a>
@@ -391,17 +435,20 @@
                                 </a>
                             </div>
                             <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt="" style="padding-bottom: 3px">
+                                <img src="media/icons/star.png" width="10" alt=""
+                                    style="padding-bottom: 3px">
                                 7.7
                             </div>
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info
                                 </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/play.png" width="10" alt="">
                                     Watch
                                 </a>
@@ -429,17 +476,20 @@
                                 </a>
                             </div>
                             <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                <img src="media/icons/star.png" width="10" alt=""
+                                    class="padding-bottom-sm">
                                 6.3
                             </div>
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info
                                 </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/play.png" width="10" alt="">
                                     Watch
                                 </a>
@@ -467,17 +517,20 @@
                                 </a>
                             </div>
                             <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                <img src="media/icons/star.png" width="10" alt=""
+                                    class="padding-bottom-sm">
                                 8.0
                             </div>
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info
                                 </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/play.png" width="10" alt="">
                                     Watch
                                 </a>
@@ -505,17 +558,20 @@
                                 </a>
                             </div>
                             <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                <img src="media/icons/star.png" width="10" alt=""
+                                    class="padding-bottom-sm">
                                 6.5
                             </div>
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info
                                 </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/play.png" width="10" alt="">
                                     Watch
                                 </a>
@@ -543,17 +599,20 @@
                                 </a>
                             </div>
                             <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                <img src="media/icons/star.png" width="10" alt=""
+                                    class="padding-bottom-sm">
                                 7.4
                             </div>
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info
                                 </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    aria-pressed="true">
                                     <img src="media/icons/play.png" width="10" alt="">
                                     Watch
                                 </a>
@@ -569,7 +628,8 @@
             <!-- Trend tab - CLOSE -->
 
             <!-- Popular tab - OPEN -->
-            <div class="margin-top-under-sm tab-pane fade" id="popular" role="tabpanel" aria-labelledby="popular-tab">
+            <div class="margin-top-under-sm tab-pane fade" id="popular" role="tabpanel"
+                aria-labelledby="popular-tab">
                 Popular
             </div>
             <!-- Popular tab - CLOSE -->
@@ -581,7 +641,8 @@
             <!-- New tab - CLOSE -->
 
             <!-- Oscars tab - OPEN -->
-            <div class="margin-top-under-sm tab-pane fade" id="oscars" role="tabpanel" aria-labelledby="oscars-tab">
+            <div class="margin-top-under-sm tab-pane fade" id="oscars" role="tabpanel"
+                aria-labelledby="oscars-tab">
                 Oscars 2020
             </div>
             <!-- Oscars tab - CLOSE -->
@@ -591,15 +652,19 @@
 
         <!-- Tabs nav - OPEN -->
         <nav class="nav nav-fill nav-pills" id="explore-tabs" role="tablist">
-            <a class="nav-item nav-link active" id="movies-tab" data-toggle="pill" href="#movies" role="tab" aria-controls="movies-tab" aria-selected="true">
+            <a class="nav-item nav-link active" id="movies-tab" data-toggle="pill" href="#movies" role="tab"
+                aria-controls="movies-tab" aria-selected="true">
                 <div class="icon-nav">
-                    <img src="media/icons/cinema.png" width="15" alt="" class="margin-right-sm padding-bottom-sm">
+                    <img src="media/icons/cinema.png" width="15" alt=""
+                        class="margin-right-sm padding-bottom-sm">
                     Movies
                 </div>
             </a>
-            <a class="nav-item nav-link" id="tvshows-tab" data-toggle="pill" href="#tvshows" role="tab" aria-controls="tvshows-tab" aria-selected="false">
+            <a class="nav-item nav-link" id="tvshows-tab" data-toggle="pill" href="#tvshows" role="tab"
+                aria-controls="tvshows-tab" aria-selected="false">
                 <div class="icon-nav">
-                    <img src="media/icons/tv.png" width="15" alt="" class="margin-right-sm padding-bottom-sm">
+                    <img src="media/icons/tv.png" width="15" alt=""
+                        class="margin-right-sm padding-bottom-sm">
                     TV Shows
                 </div>
             </a>
@@ -610,10 +675,13 @@
         <div class="tab-content" id="exploreContent">
 
             <!-- Movies tab - OPEN -->
-            <div class="margin-top-under-sm tab-pane fade show active" id="movies" role="tabpanel" aria-labelledby="movies-tab">
+            <div class="margin-top-under-sm tab-pane fade show active" id="movies" role="tabpanel"
+                aria-labelledby="movies-tab">
 
                 <!-- Genre Filters - OPEN -->
-                <div class="carousel" data-flickity='{ "groupCells": true, "cellAlign": "left", "pageDots": false, "wrapAround": false, "draggable": false, "contain": true }' id="genreFilters">
+                <div class="carousel"
+                    data-flickity='{ "groupCells": true, "cellAlign": "left", "pageDots": false, "wrapAround": false, "draggable": false, "contain": true }'
+                    id="genreFilters">
 
                     <!-- Genre Action - OPEN -->
                     <div class="carousel-filter-cell text-center">
@@ -681,7 +749,8 @@
 
                     <!-- Genre Historical Fiction - OPEN -->
                     <div class="carousel-filter-cell text-center">
-                        <button class="btn btn-outline-primary btn-md margin-top-under-sm" data-filter=".Historical-Fiction">
+                        <button class="btn btn-outline-primary btn-md margin-top-under-sm"
+                            data-filter=".Historical-Fiction">
                             Historical Fiction
                         </button>
                     </div>
@@ -697,7 +766,8 @@
 
                     <!-- Genre Magical Realism - OPEN -->
                     <div class="carousel-filter-cell text-center">
-                        <button class="btn btn-outline-primary btn-md margin-top-under-sm" data-filter=".Magical_Realism">
+                        <button class="btn btn-outline-primary btn-md margin-top-under-sm"
+                            data-filter=".Magical_Realism">
                             Magical Realism
                         </button>
                     </div>
@@ -713,7 +783,8 @@
 
                     <!-- Genre Paranoid Fiction - OPEN -->
                     <div class="carousel-filter-cell text-center">
-                        <button class="btn btn-outline-primary btn-md margin-top-under-sm" data-filter=".Paranoid_Fiction">
+                        <button class="btn btn-outline-primary btn-md margin-top-under-sm"
+                            data-filter=".Paranoid_Fiction">
                             Paranoid Fiction
                         </button>
                     </div>
@@ -721,7 +792,8 @@
 
                     <!-- Genre Philosophical - OPEN -->
                     <div class="carousel-filter-cell text-center">
-                        <button class="btn btn-outline-primary btn-md margin-top-under-sm" data-filter=".Philosophical">
+                        <button class="btn btn-outline-primary btn-md margin-top-under-sm"
+                            data-filter=".Philosophical">
                             Philosophical
                         </button>
                     </div>
@@ -761,7 +833,8 @@
 
                     <!-- Genre Science Fiction - OPEN -->
                     <div class="carousel-filter-cell text-center">
-                        <button class="btn btn-outline-primary btn-md margin-top-under-sm" data-filter=".Science_Fiction">
+                        <button class="btn btn-outline-primary btn-md margin-top-under-sm"
+                            data-filter=".Science_Fiction">
                             Science Fiction
                         </button>
                     </div>
@@ -873,17 +946,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     7.7
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -911,17 +987,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     8.0
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -949,17 +1028,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     9.0
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -987,17 +1069,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     8.8
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1025,17 +1110,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     7.3
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1069,17 +1157,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     7.7
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1107,17 +1198,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     8.0
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1145,17 +1239,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     8.1
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1183,17 +1280,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     7.0
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1221,17 +1321,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     7.9
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1265,17 +1368,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     7.4
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1303,17 +1409,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     8.0
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1341,17 +1450,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     8.0
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1379,17 +1491,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     8.0
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1417,17 +1532,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     7.7
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1461,17 +1579,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     8.1
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1499,17 +1620,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     8.0
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1537,17 +1661,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     6.9
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1575,17 +1702,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     8.1
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1613,17 +1743,20 @@
                                     </a>
                                 </div>
                                 <div class="col-3 text-right no-padding rating">
-                                    <img src="media/icons/star.png" width="10" alt="" class="padding-bottom-sm">
+                                    <img src="media/icons/star.png" width="10" alt=""
+                                        class="padding-bottom-sm">
                                     8.1
                                 </div>
                             </div>
                             <div class="overlay">
                                 <div class="text">
-                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button" aria-pressed="true">
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm"
+                                        role="button" aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
                                         Watch
                                     </a>
@@ -1639,8 +1772,10 @@
 
                 <!-- Load more button - OPEN -->
                 <div class="margin-top-under-sm text-center">
-                    <a href="#" class="btn btn-outline-secondary btn-lg margin-top-under-sm" role="button" id="loadMore">
-                        <img src="media/icons/plus.png" width="15" alt="" class="margin-right-sm padding-bottom-sm">
+                    <a href="#" class="btn btn-outline-secondary btn-lg margin-top-under-sm" role="button"
+                        id="loadMore">
+                        <img src="media/icons/plus.png" width="15" alt=""
+                            class="margin-right-sm padding-bottom-sm">
                         Load More
                     </a>
                 </div>
@@ -1650,7 +1785,8 @@
             <!-- Movies tab - CLOSE -->
 
             <!-- TV Shows tab - OPEN -->
-            <div class="margin-bottom tab-pane fade show" id="tvshows" role="tabpanel" aria-labelledby="tvshows-tab">
+            <div class="margin-bottom tab-pane fade show" id="tvshows" role="tabpanel"
+                aria-labelledby="tvshows-tab">
                 TV Shows
             </div>
             <!-- TV Shows tab - CLOSE -->

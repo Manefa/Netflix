@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('films', function (Blueprint $table) {
             $table->id();
             $table->string('titre', 255);
-            $table->string('resume', 255);
+            $table->string('resume', 500);
             $table->string('duree', 255);
             $table->year('annee_de_production');
             $table->string('brand');
