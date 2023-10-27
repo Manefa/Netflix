@@ -17,7 +17,7 @@ class FilmsController extends Controller
     {
         //C'est le contrôleur qui interroge la BD et passe les information à la Vue.
         $films = Film::all();
-        return View('netflix.index', compact('films'));
+        return View('Netflix.index', compact('films'));
     }
 
 }

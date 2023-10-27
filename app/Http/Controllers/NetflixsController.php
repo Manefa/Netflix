@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Film;
 use Illuminate\Http\Request;
 
 class NetflixsController extends Controller
@@ -11,7 +11,8 @@ class NetflixsController extends Controller
      */
     public function index()
     {
-        return View('Netflix.index');
+        $films = Film::all();
+        return View('Netflix.index', compact('films'));
     }
 
     /**
