@@ -49,8 +49,13 @@
 
     @if (count($films))
         @foreach ($films as $film)
-            <li>{{ $film->titre }}</li>
-            <li>{{ $film->resume }}</li>
+           
+            <li>{{ $film->realisateur->nom}}</li>
+            <li>{{ $film->producteur->nom}}</li>
+            @foreach ($film->acteurs as $acteursDuFilm)
+                <li>$acteursDuFilm->nom</li>
+            @endforeach
+            <li>-----------------------------</li>
         @endforeach
     @else
         <p>Il n'y a aucun film.</p>
