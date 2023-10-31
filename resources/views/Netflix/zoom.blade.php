@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="zoom.css">
+    <link rel="stylesheet" href="{{asset('zoom.css')}}">
     <title>Zoom sur {{$film->titre}}</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
   
   <div class="container">
     
-    <a href="#"><img src="{{$film->pochette_url}}" alt="cover" class="cover" /></a>
+    <img src="{{$film->pochette_url}}" alt="cover" class="cover" />
         
     <div class="hero">
             
@@ -46,20 +46,20 @@
       <div class="column1">
       @if (count($film->genres))
                             @foreach ($film->genres as $genre)
-                                <span>{{ $genre->nom }}</span>
+                                <span>{{ $genre->titre }}</span>
                             @endforeach
                         @else
-                            <p>Il ny a aucun genres.</p>
+                            <p>Il ny a aucun acteur.</p>
                         @endif
       </div> <!-- end column1 -->
       
       <div class="column2">
         
-        <p>{{$film->resume}}<a href="#">read more</a></p>
+        <p>{{$film->resume}}</p>
         
         <div class="avatars">
           <a href="#" data-tooltip="Person 1" data-placement="top">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_avatar1.png" alt="avatar1" />
+            <img src="{{$film->realisateur->photo}}" alt="avatar1" />
           </a>
           
           <a href="#" data-tooltip="Person 2" data-placement="top">
