@@ -21,6 +21,7 @@ return new class extends Migration
             $table->unsignedBigInteger('realisateur_id');
             $table->unsignedBigInteger('producteur_id');
             $table->string('lien_film', 255);
+            $table->string('couverture_url', 255);
             $table->string('pochette_url', 255);
             $table->integer('cote');
             $table->string('notation');
