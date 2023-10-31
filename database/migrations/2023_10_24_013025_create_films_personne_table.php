@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('film_personne', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('film_id');
-            $table->unsignedBigInteger('acteur_id');
+            $table->unsignedBigInteger('personne_id');
             $table->timestamps();
 
             // Définir les clés étrangères
             $table->foreign('film_id')->references('id')->on('films');
-            $table->foreign('acteur_id')->references('id')->on('personnes');
+            $table->foreign('personne_id')->references('id')->on('personnes');
         });
     }
 

@@ -47,20 +47,6 @@
 <body>
     @extends('layouts.app')
 
-    @if (count($films))
-        @foreach ($films as $film)
-           
-            <li>{{ $film->realisateur->nom}}</li>
-            <li>{{ $film->producteur->nom}}</li>
-            @foreach ($film->acteurs as $acteursDuFilm)
-                <li>$acteursDuFilm->nom</li>
-            @endforeach
-            <li>-----------------------------</li>
-        @endforeach
-    @else
-        <p>Il n'y a aucun film.</p>
-    @endif
-
 
     <!-- Slider - OPEN -->
     <div id="mainCarousel" class="carousel slide" data-ride="carousel">
@@ -75,17 +61,28 @@
             <div class="carousel-item active">
                 <img class="d-block w-100" src="media/images/banner/banner_stranger_things.png" alt="Second slide">
                 <div class="carousel-caption d-none d-md-block container-lg align-middle">
-                    <h1> Stranger Things </h1>
-                    <p> <a href="#">2016</a> | +16 | 3 Seasons | <a href="#">TV Shows</a> </p>
+                    <h1> {{ $films[0]->titre }} </h1>
+                    <p> <a href="#">{{ $films[0]->annee_de_production }}</a> | {{ $films[0]->notation }} | <a
+                            href="#">{{ $films[0]->genres[0]->titre }}</a> </p>
                     <p class="margin-top-under-sm">
-                        When a young boy vanishes, a small town uncovers a mystery involving secret experiments,
-                        terrifying supernatural forces and one strange little girl.
+                        {{ $films[0]->resume }}
                     </p>
                     <p>
-                        Starring: <a href="#">Winona Ryder</a>, <a href="#">David Harbour</a>, <a
-                            href="#">Finn Wolfhard</a>
+                        Starring:
+
+
+                        @if (count($films[0]->acteurs))
+                            @foreach ($films[0]->acteurs as $acteur)
+                                <a href="#">{{ $acteur->nom }}, </a>
+                            @endforeach
+                        @else
+                            <p>Il ny a aucun acteur.</p>
+                        @endif
+
+
+
                     </p>
-                    <p> Creators: <a href="#">The Duffer Brothers</a> </p>
+                    <p> Creators: <a href="#">{{ $films[0]->producteur->nom }}</a> </p>
                     <div class="margin-top-under-sm">
                         <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
                             aria-pressed="true">
@@ -106,17 +103,28 @@
             <div class="carousel-item">
                 <img class="d-block w-100" src="media/images/banner/banner_money_heist.jpg" alt="First slide">
                 <div class="carousel-caption d-none d-md-block container-lg align-middle">
-                    <h1> Money Heist </h1>
-                    <p> <a href="#">2017</a> | +16 | 3 Seasons | <a href="#">TV Shows</a> </p>
+                    <h1> {{ $films[1]->titre }} </h1>
+                    <p> <a href="#">{{ $films[1]->annee_de_production }}</a> | {{ $films[1]->notation }} | <a
+                            href="#">{{ $films[1]->genres[0]->titre }}</a> </p>
                     <p class="margin-top-under-sm">
-                        Eight thieves take hostages and lock themselves in the Royal Mint of Spain as a criminal
-                        mastermind manipulates the police to carry out his plan.
+                        {{ $films[1]->resume }}
                     </p>
                     <p>
-                        Starring: <a href="#">Úrsula Corberó</a>, <a href="#">Álvaro Morte</a>, <a
-                            href="#">Pedro Alonso</a>
+                        Starring:
+
+
+                        @if (count($films[1]->acteurs))
+                            @foreach ($films[1]->acteurs as $acteur)
+                                <a href="#">{{ $acteur->nom }}, </a>
+                            @endforeach
+                        @else
+                            <p>Il ny a aucun acteur.</p>
+                        @endif
+
+
+
                     </p>
-                    <p> Creators: <a href="#">Álex Pina</a> </p>
+                    <p> Creators: <a href="#">{{ $films[1]->producteur->nom }}</a> </p>
                     <div class="margin-top-under-sm">
                         <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
                             aria-pressed="true">
@@ -137,17 +145,28 @@
             <div class="carousel-item">
                 <img class="d-block w-100" src="media/images/banner/banner_the_witcher.png" alt="Third slide">
                 <div class="carousel-caption d-none d-md-block container-lg align-middle">
-                    <h1> The Witcher </h1>
-                    <p> <a href="#">2019</a> | +16 | 1 Season | <a href="#">TV Shows</a> </p>
-                    <p class="margin-sm">
-                        Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent
-                        world where people often prove more wicked than beasts.
+                    <h1> {{ $films[2]->titre }} </h1>
+                    <p> <a href="#">{{ $films[2]->annee_de_production }}</a> | {{ $films[2]->notation }} | <a
+                            href="#">{{ $films[2]->genres[0]->titre }}</a> </p>
+                    <p class="margin-top-under-sm">
+                        {{ $films[2]->resume }}
                     </p>
                     <p>
-                        Starring: <a href="#">Henry Cavill</a>, <a href="#">Anya Chalotra</a>, <a
-                            href="#">Freya Allan</a>
+                        Starring:
+
+
+                        @if (count($films[2]->acteurs))
+                            @foreach ($films[2]->acteurs as $acteur)
+                                <a href="#">{{ $acteur->nom }}, </a>
+                            @endforeach
+                        @else
+                            <p>Il ny a aucun acteur.</p>
+                        @endif
+
+
+
                     </p>
-                    <p> Creators: <a href="#">Lauren Schmidt Hissrich</a> </p>
+                    <p> Creators: <a href="#">{{ $films[1]->producteur->nom }}</a> </p>
                     <div class="margin-top-under-sm">
                         <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
                             aria-pressed="true">
@@ -216,28 +235,29 @@
                     data-flickity='{ "groupCells": true, "cellAlign": "center", "pageDots": false, "wrapAround": true, "draggable": false }'
                     style="height: 400px">
 
-                    <!-- The Irishman - OPEN -->
+                    <?php foreach ($films as $film): ?>
+                    <!-- Film - OPEN -->
                     <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="media/images/posters/the_irishman.jpg" />
-                        <h5 class="text-center"> The Irishman </h5>
+                        <img class="carousel-cell-image" src="media/images/posters/<?php echo $film->image; ?>" />
+                        <h5 class="text-center"><?php echo $film->titre; ?></h5>
                         <div class="row">
                             <div class="col-3 text-left no-padding">
-                                2019
+                                <?php echo $film->annee_de_production; ?>
                             </div>
                             <div class="col-3 text-center no-padding">
-                                <a href="">
+                                <a href="#">
                                     <img src="media/icons/eye.png" width="10" alt="">
                                 </a>
                             </div>
                             <div class="col-3 text-left no-padding">
-                                <a href="">
+                                <a href="#">
                                     <img src="media/icons/heart.png" width="10" alt="">
                                 </a>
                             </div>
                             <div class="col-3 text-right no-padding rating">
                                 <img src="media/icons/star.png" width="10" alt=""
                                     style="padding-bottom: 3px">
-                                8.0
+                                <?php echo $film->cote; ?>
                             </div>
                         </div>
                         <div class="overlay">
@@ -255,382 +275,15 @@
                             </div>
                         </div>
                     </div>
-                    <!-- The Irishman - CLOSE -->
-
-                    <!-- Parasite - OPEN -->
-                    <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="media/images/posters/parasite.jpg" />
-                        <h5 class="text-center"> Parasite </h5>
-                        <div class="row">
-                            <div class="col-3 text-left no-padding">
-                                2019
-                            </div>
-                            <div class="col-3 text-center no-padding selected">
-                                <a href="">
-                                    <img src="media/icons/eye-selected.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-left no-padding selected">
-                                <a href="">
-                                    <img src="media/icons/heart-selected.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt=""
-                                    style="padding-bottom: 3px">
-                                8.6
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/info.png" width="10" alt="">
-                                    Info
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/play.png" width="10" alt="">
-                                    Watch
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Parasite - CLOSE -->
-
-                    <!-- 1917 - OPEN -->
-                    <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="media/images/posters/1917.jpg" />
-                        <h5 class="text-center"> 1917 </h5>
-                        <div class="row">
-                            <div class="col-3 text-left no-padding">
-                                2019
-                            </div>
-                            <div class="col-3 text-center no-padding selected">
-                                <a href="">
-                                    <img src="media/icons/eye-selected.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-left no-padding">
-                                <a href="">
-                                    <img src="media/icons/heart.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt=""
-                                    style="padding-bottom: 3px">
-                                8.5
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/info.png" width="10" alt="">
-                                    Info
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/play.png" width="10" alt="">
-                                    Watch
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 1917 - CLOSE -->
-
-                    <!-- Roma - OPEN -->
-                    <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="media/images/posters/roma.jpeg" />
-                        <h5 class="text-center"> Roma </h5>
-                        <div class="row">
-                            <div class="col-3 text-left no-padding">
-                                2018
-                            </div>
-                            <div class="col-3 text-center no-padding">
-                                <a href="">
-                                    <img src="media/icons/eye.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-left no-padding">
-                                <a href="">
-                                    <img src="media/icons/heart.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt=""
-                                    style="padding-bottom: 3px">
-                                7.7
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/info.png" width="10" alt="">
-                                    Info
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/play.png" width="10" alt="">
-                                    Watch
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Roma - CLOSE -->
-
-                    <!-- Uncut Gems - OPEN -->
-                    <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="media/images/posters/uncut_gems.jpg" />
-                        <h5 class="text-center"> Uncut Gems </h5>
-                        <div class="row">
-                            <div class="col-3 text-left no-padding">
-                                2019
-                            </div>
-                            <div class="col-3 text-center no-padding">
-                                <a href="">
-                                    <img src="media/icons/eye.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-left no-padding selected">
-                                <a href="">
-                                    <img src="media/icons/heart-selected.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt=""
-                                    style="padding-bottom: 3px">
-                                7.8
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/info.png" width="10" alt="">
-                                    Info
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/play.png" width="10" alt="">
-                                    Watch
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Uncut Gems - CLOSE -->
-
-                    <!-- Zodiac - OPEN -->
-                    <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="media/images/posters/zodiac.jpg" />
-                        <h5 class="text-center"> Zodiac </h5>
-                        <div class="row">
-                            <div class="col-3 text-left no-padding">
-                                2007
-                            </div>
-                            <div class="col-3 text-center no-padding">
-                                <a href="">
-                                    <img src="media/icons/eye.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-left no-padding selected">
-                                <a href="">
-                                    <img src="media/icons/heart-selected.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt=""
-                                    style="padding-bottom: 3px">
-                                7.7
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/info.png" width="10" alt="">
-                                    Info
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/play.png" width="10" alt="">
-                                    Watch
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Zodiac - CLOSE -->
-
-                    <!-- 1922 - OPEN -->
-                    <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="media/images/posters/1922.jpg" />
-                        <h5 class="text-center"> 1922 </h5>
-                        <div class="row">
-                            <div class="col-3 text-left no-padding">
-                                2017
-                            </div>
-                            <div class="col-3 text-center no-padding">
-                                <a href="">
-                                    <img src="media/icons/eye.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-left no-padding">
-                                <a href="">
-                                    <img src="media/icons/heart.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt=""
-                                    class="padding-bottom-sm">
-                                6.3
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/info.png" width="10" alt="">
-                                    Info
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/play.png" width="10" alt="">
-                                    Watch
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- 1922 - OPEN -->
-
-                    <!-- Marriage Story - OPEN -->
-                    <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="media/images/posters/marriage_story.jpeg" />
-                        <h5 class="text-center"> Marriage Story </h5>
-                        <div class="row">
-                            <div class="col-3 text-left no-padding">
-                                2019
-                            </div>
-                            <div class="col-3 text-center no-padding">
-                                <a href="">
-                                    <img src="media/icons/eye.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-left no-padding">
-                                <a href="">
-                                    <img src="media/icons/heart.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt=""
-                                    class="padding-bottom-sm">
-                                8.0
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/info.png" width="10" alt="">
-                                    Info
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/play.png" width="10" alt="">
-                                    Watch
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Marriage Story - OPEN -->
-
-                    <!-- Mowgli - OPEN -->
-                    <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="media/images/posters/mowgli.jpg" />
-                        <h5 class="text-center"> Mowgli </h5>
-                        <div class="row">
-                            <div class="col-3 text-left no-padding">
-                                2018
-                            </div>
-                            <div class="col-3 text-center no-padding">
-                                <a href="">
-                                    <img src="media/icons/eye.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-left no-padding">
-                                <a href="">
-                                    <img src="media/icons/heart.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt=""
-                                    class="padding-bottom-sm">
-                                6.5
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/info.png" width="10" alt="">
-                                    Info
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/play.png" width="10" alt="">
-                                    Watch
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Mowgli - OPEN -->
-
-                    <!-- Darkest Hour - OPEN -->
-                    <div class="carousel-cell">
-                        <img class="carousel-cell-image" src="media/images/posters/darkest_hour.jpg" />
-                        <h5 class="text-center"> Darkest Hour </h5>
-                        <div class="row">
-                            <div class="col-3 text-left no-padding">
-                                2017
-                            </div>
-                            <div class="col-3 text-center no-padding">
-                                <a href="">
-                                    <img src="media/icons/eye.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-left no-padding">
-                                <a href="">
-                                    <img src="media/icons/heart.png" width="10" alt="">
-                                </a>
-                            </div>
-                            <div class="col-3 text-right no-padding rating">
-                                <img src="media/icons/star.png" width="10" alt=""
-                                    class="padding-bottom-sm">
-                                7.4
-                            </div>
-                        </div>
-                        <div class="overlay">
-                            <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/info.png" width="10" alt="">
-                                    Info
-                                </a>
-                                <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
-                                    aria-pressed="true">
-                                    <img src="media/icons/play.png" width="10" alt="">
-                                    Watch
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Darkest Hour - OPEN -->
+                    <!-- Film - CLOSE -->
+                    <?php endforeach; ?>
 
                 </div>
                 <!-- Carousel - CLOSE -->
 
             </div>
             <!-- Trend tab - CLOSE -->
+
 
             <!-- Popular tab - OPEN -->
             <div class="margin-top-under-sm tab-pane fade" id="popular" role="tabpanel"

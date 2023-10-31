@@ -22,8 +22,8 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 1, // ID du réalisateur
                 'producteur_id' => 2, // ID du producteur
-                'lien_film' => 'https://www.example.com/shawshank_redemption.mp4',
-                'pochette_url' => 'https://www.example.com/shawshank_redemption.jpg',
+                'lien_film' => 'https://youtu.be/PLl99DlL6b4?si=VtIxKVoK1t9utkjF',
+                'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg',
                 'cote' => 70,
                 'notation' => '18 ans et plus',
                 'genre_id' => 1, // ID du genre
@@ -38,8 +38,8 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 3, // ID du réalisateur
                 'producteur_id' => 4, // ID du producteur
-                'lienfilm' => 'https://www.example.com/godfather.mp4',
-                'pochetteurl' => 'https://www.example.com/godfather.jpg',
+                'lienfilm' => 'https://youtu.be/UaVTIH8mujA?si=zSTQqrUEpHUkBp5T',
+                'pochetteurl' => 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg',
                 'cote' => 50,
                 'notation' => '14 ans et plus',
                 'genre_id' => 2, // ID du genre
