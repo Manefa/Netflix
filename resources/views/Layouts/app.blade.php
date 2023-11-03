@@ -15,7 +15,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <title>Document</title>
+    <title>Navbar</title>
 </head>
 
 <body>
@@ -84,23 +84,13 @@
                 <!-- Left - OPEN -->
                 <ul class="navbar-nav mr-auto my-2 my-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link navbar-nav-item" href="#">
+                        <a class="nav-link navbar-nav-item" href="{{route('netflix')}}">
                             Home <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link navbar-nav-item" href="#">
-                            Movies
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-nav-item" href="#">
-                            TV Shows
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link navbar-nav-item" href="#">
-                            My List
+                        <a class="nav-link navbar-nav-item" href="{{route('films.create')}}">
+                            Ajouter film
                         </a>
                     </li>
                 </ul>

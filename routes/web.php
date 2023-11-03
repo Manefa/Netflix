@@ -20,8 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('pokemons', [PokemonsController::class, 'index']);
+Route::get('/netflix', [NetflixsController::class, 'index'])->name('netflix');
 
-Route::get('netflixs', [NetflixsController::class, 'index']);
+Route::get('/films/creation', [FilmsController::class, 'create'])->name('films.create');
+
+Route::post('/films', [FilmsController::class, 'store'])->name('films.store');
 
 Route::get('/films/{film}/', [FilmsController::class, 'show'])->name('films.show');
+// Mettre liens avec variables en dernier.

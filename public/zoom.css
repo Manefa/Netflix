@@ -23,6 +23,7 @@ a:hover {
   font: 14px/22px "Lato", Arial, sans-serif;
   color: #A9A8A3;
   padding: 40px 0;
+  margin-top: 100px;
 }
 
 .container {
@@ -51,8 +52,7 @@ a:hover {
   position:absolute;
   overflow: hidden;
   top:0; left:0;
-  background:red;
-  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/hobbit_bg.jpg");
+  background:rgb(59, 59, 59);
   z-index:-1;
  
   transform: skewY(-2.2deg);
@@ -255,5 +255,11 @@ a[data-tooltip][data-placement="top"]::after {
   bottom: 50px;
   left: 20px;
   margin-bottom: 4px;
+}
+
+.img_personne {
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
 }
 

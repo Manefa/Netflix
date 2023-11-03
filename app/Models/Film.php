@@ -9,6 +9,8 @@ class Film extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['titre', 'resume', 'duree', 'annee_de_production', 'brand', 'lien_film', 'pochette_url', 'cote', 'notation'];
+
     public function realisateur(){
         return $this->belongsTo(Personne::class);
     }

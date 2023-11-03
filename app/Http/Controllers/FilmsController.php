@@ -25,4 +25,12 @@ class FilmsController extends Controller
         return View('Netflix.zoom', compact('film'));
     }
 
+    public function create() {
+        return View('Netflix.create');
+    }
+
+    public function store(Request $request) {
+        
+    }
+
 }
