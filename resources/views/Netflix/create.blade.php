@@ -40,6 +40,9 @@
                         <input type="text" class="form-control" id="pochetteURL" placeholder="Pochette" name="pochette_url">
                         <label for="coteFilm">Cote du film</label>
                         <input type="number" class="form-control" id="coteFilm" placeholder="Cote" name="cote">
+                        <label for="notationFilm">Notation du film</label>
+                        <input type="text" class="form-control" id="notationFilm" placeholder="Notation" name="notation">
+                        
                     </div>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </form>
