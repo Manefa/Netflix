@@ -20,4 +20,9 @@ class FilmsController extends Controller
         return View('Netflix.index', compact('films', 'genres'));
     }
 
+    public function show(Film $film)
+    {
+        return View('Netflix.zoom', compact('film'));
+    }
+
 }

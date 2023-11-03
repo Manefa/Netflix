@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\HTTP\Controllers\PokemonsController;
 use App\HTTP\Controllers\NetflixsController;
+use App\HTTP\Controllers\FilmsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('pokemons', [PokemonsController::Class, 'index']);
+Route::get('pokemons', [PokemonsController::class, 'index']);
 
-Route::get('netflixs', [NetflixsController::Class, 'index']);
+Route::get('netflixs', [NetflixsController::class, 'index']);
+
+Route::get('/netflixs/{film}/', [FilmsController::class, 'zoom'])->name('netflixs.zoom');
+
+Route::get('/films/{film}/', [FilmsController::class, 'show'])->name('films.show');
