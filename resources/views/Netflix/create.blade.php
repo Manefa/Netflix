@@ -42,7 +42,12 @@
                         <input type="number" class="form-control" id="coteFilm" placeholder="Cote" name="cote">
                         <label for="notationFilm">Notation du film</label>
                         <input type="text" class="form-control" id="notationFilm" placeholder="Notation" name="notation">
-                        
+                        <label for="genreId">Genre du film</label>
+                        <select name="genre_id" id="genreId">
+                        @foreach($genres as $genre)
+                            <option value="{{$genre->genre_id}}">{{$genre->titre}}</option>
+                        @endforeach
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </form>
