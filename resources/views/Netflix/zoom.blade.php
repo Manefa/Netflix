@@ -15,7 +15,7 @@
 
 <body style="background-color: black;">
     @extends('layouts.app')
-    <div style="background-image: url({{ $film->couverture_url }}); background-size: cover; height: 50vh; "
+    <div style="background-image: url({{ $film->couverture_url }}); background-size: cover; height: 100vh; "
         class="jumbotron">
         <div>
             <h1 class="text-light" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">{{ $film->titre }}</h1>
