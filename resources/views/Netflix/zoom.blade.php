@@ -14,17 +14,18 @@
 
 <body style="background-color: black;">
     <div class="container ">
-        <div style="background-color: black;"    class="jumbotron">
+        <div style="background-color: black;" class="jumbotron">
             <h1 class="text-light">{{ $film->titre }}</h1>
             <p class="text-light">{{ $film->resume }}</p>
-            <p class="text-light">Durée: {{ $film->duree }}min | Année de Production: {{ $film->annee_de_production }} | Cote: PG-13 | Notation: 4.5/5</p>
+            <p class="text-light">Durée: {{ $film->duree }}min | Année de Production: {{ $film->annee_de_production }}
+                | Cote: PG-13 | Notation: 4.5/5</p>
         </div>
-        
+
         <div class="row">
             <div class="col-md-6">
                 <!-- Petite image du film avec icône Play -->
                 <div class="film-image">
-                    <img src= {{ $film->pochette_url }}  alt="Image du Film" class="img-fluid">
+                    <img src={{ $film->pochette_url }} alt="Image du Film" class="img-fluid">
                     <a href="lien_vers_trailer.mp4" data-toggle="modal" data-target="#trailerModal">
                         <i class="fas fa-play-circle play-icon"></i>
                     </a>
@@ -33,36 +34,68 @@
                 <div class="film-details text-light">
                     <h3>Genres</h3>
                     <ul>
-                        <li>Genre 1</li>
-                        <li>Genre 2</li>
-                        <li>Genre 3</li>
+                        @if (count($film->genres))
+                            @foreach ($film->genres as $genre)
+                                <li>{{ $genre->titre }}</li>
+                            @endforeach
+                        @else
+                            <p>Il ny a aucun acteur.</p>
+                        @endif
                     </ul>
                 </div>
                 <!-- Équipe du film -->
                 <div class="film-details text-light">
                     <h3>Équipe du Film</h3>
-                    <div class="row">
+                    
+                    <div class="row m">
                         <div class="col-md-4">
-                            <img src="chemin_vers_realisateur.jpg" alt="Réalisateur" class="img-fluid">
                             <p>Réalisateur</p>
                         </div>
                         <div class="col-md-4">
-                            <img src="chemin_vers_producteur.jpg" alt="Producteur" class="img-fluid">
+                            <img  src={{ $film->realisateur->photo }} alt="Réalisateur" class="img-fluid">
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
                             <p>Producteur</p>
                         </div>
+
                         <div class="col-md-4">
-                            <img src="chemin_vers_acteur.jpg" alt="Acteur" class="img-fluid">
+                            <img src={{ $film->producteur->photo }} alt="Producteur" class="img-fluid">
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-4">
                             <p>Acteur</p>
+                        </div>
+
+                        <div class="col-md-4">
+
+                            @if (count($film->acteurs))
+                                @foreach ($film->acteurs as $acteur)
+                                    <img src={{ $acteur->photo }} alt="Acteur" class="img-fluid">
+                                @endforeach
+                            @else
+                                <p>Il ny a aucun acteur.</p>
+                            @endif
+
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
 
     <!-- Modal pour la vidéo du trailer -->
-    <div  class="modal fade" id="trailerModal" tabindex="-1" role="dialog" aria-labelledby="trailerModalLabel" aria-hidden="true">
+    <div class="modal fade" id="trailerModal" tabindex="-1" role="dialog" aria-labelledby="trailerModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
