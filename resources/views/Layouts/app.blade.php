@@ -7,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap 4.4.1 -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
     <!-- Flickity 2.2.1 -->
-    <link rel="stylesheet" type="text/css" href="css/flickity.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/flickity.css')}}">
     <!-- JQuery UI -->
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/jquery-ui.css')}}">
     <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
     <title>Navbar</title>
 </head>
@@ -67,8 +67,8 @@
         <div class="container-lg">
 
             <!-- Logo - OPEN -->
-            <a class="navbar-brand logo" href="/">
-                <img src="media/images/logo.png" width="80" alt="">
+            <a class="navbar-brand logo" href="/netflix">
+                <img src="{{asset('media/images/logo.png')}}" width="80" alt=""> 
             </a>
             <!-- Logo - CLOSE -->
 
@@ -83,7 +83,7 @@
 
                 <!-- Left - OPEN -->
                 <ul class="navbar-nav mr-auto my-2 my-lg-0">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link navbar-nav-item" href="{{route('netflix')}}">
                             Home <span class="sr-only">(current)</span>
                         </a>
@@ -100,17 +100,17 @@
                 <ul class="navbar-nav my-2 my-lg-0 navbar-right">
                     <li class="nav-item">
                         <a class="nav-link float-center" href="#">
-                            <img src="media/icons/search.png" width="20" alt="">
+                            <img src="{{asset('media/icons/search.png')}}" width="20" alt=""> 
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link float-center" href="#">
-                            <img src="media/icons/bell.png" width="20" alt="">
+                            <img src=" {{asset('media/icons/bell.png')}}" width="20" alt="">
                         </a>
                     </li>
                     <li class="nav-item avatar">
-                        <a class="float-right" href="https://github.com/eduayme" target="_blank">
-                            <img class="avatar" src="media/icons/avatar.png" alt="">
+                        <a class="float-right" href="/netflix" target="_blank">
+                            <img class="avatar" src="{{asset('media/icons/avatar.png')}}" alt="">  
                         </a>
                     </li>
                 </ul>

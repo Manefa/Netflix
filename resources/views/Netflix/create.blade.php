@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/jquery-ui.css')}}">
     <!-- Main CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+
     <title>Formulaire - Ajout de film</title>
 </head>
 
@@ -34,6 +35,18 @@
                         <input type="text" class="form-control" id="anneeFilm" placeholder="Année" name="annee_de_production">
                         <label for="brandFilm">Brand</label>
                         <input type="text" class="form-control" id="brandFilm" placeholder="Brand" name="brand">
+                        <label for="realisateurId">Réalisateur du film</label>
+                        <select name="realisateur_id" id="realisateurId">
+                        @foreach($personnes as $personne)
+                            <option value="{{$personne->realisateur_id}}">{{$personne->nom}}</option>
+                        @endforeach
+                        </select>
+                        <label for="producteurId">Producteur du film</label>
+                        <select name="producteur_id" id="producteurId">
+                        @foreach($personnes as $personne)
+                            <option value="{{$personne->producteur_id}}">{{$personne->nom}}</option>
+                        @endforeach
+                        </select>
                         <label for="lienFilm">Lien du film</label>
                         <input type="text" class="form-control" id="lienFilm" placeholder="Lien" name="lien_film">
                         <label for="pochetteURL">URL de la pochette</label>

@@ -10,13 +10,13 @@
     <meta name="description" content="Netflix redesign by Eduard Aymerich. ">
 
     <!-- Bootstrap 4.4.1 -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
     <!-- Flickity 2.2.1 -->
-    <link rel="stylesheet" type="text/css" href="css/flickity.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/flickity.css')}}">
     <!-- JQuery UI -->
-    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/jquery-ui.css')}}">
     <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
     <!-- SOCIAL CARDS (ADD YOUR INFO) -->
 
