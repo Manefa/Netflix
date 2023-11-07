@@ -31,5 +31,5 @@ Route::post('/films', [FilmsController::class, 'store'])->name('films.store');
 Route::get('/netflixs/{film}/', [FilmsController::class, 'zoom'])->name('netflixs.zoom');
 
 Route::get('/films/{film}/', [FilmsController::class, 'show'])->name('films.show');
-Route::get('/films/{film}/', [FilmsController::class, 'show'])->name('films.show');
+
 // Mettre liens avec variables en dernier.

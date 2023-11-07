@@ -37,28 +37,30 @@
                         <input type="text" class="form-control" id="brandFilm" placeholder="Brand" name="brand">
                         <label for="realisateurId">Réalisateur du film</label>
                         <select name="realisateur_id" id="realisateurId">
-                        @foreach($personnes as $personne)
-                            <option value="{{$personne->realisateur_id}}">{{$personne->nom}}</option>
+                        @foreach($films as $film)
+                            <option value="{{$film->realisateur_id}}">{{$film->realisateur->nom}}</option>
                         @endforeach
                         </select>
                         <label for="producteurId">Producteur du film</label>
                         <select name="producteur_id" id="producteurId">
-                        @foreach($personnes as $personne)
-                            <option value="{{$personne->producteur_id}}">{{$personne->nom}}</option>
+                        @foreach($films as $film)
+                            <option value="{{$film->producteur_id}}">{{$film->producteur->nom}}</option>
                         @endforeach
                         </select>
                         <label for="lienFilm">Lien du film</label>
-                        <input type="text" class="form-control" id="lienFilm" placeholder="Lien" name="lien_film">
+                        <input type="text" class="form-control" id="lienFilm" placeholder="Lien" name="lienfilm">
                         <label for="pochetteURL">URL de la pochette</label>
                         <input type="text" class="form-control" id="pochetteURL" placeholder="Pochette" name="pochette_url">
+                        <label for="couvertureURL">URL de la couverture</label>
+                        <input type="text" class="form-control" id="couvertureURL" placeholder="Couverture" name="couverture_url">
                         <label for="coteFilm">Cote du film</label>
                         <input type="number" class="form-control" id="coteFilm" placeholder="Cote" name="cote">
                         <label for="notationFilm">Notation du film</label>
                         <input type="text" class="form-control" id="notationFilm" placeholder="Notation" name="notation">
                         <label for="genreId">Genre du film</label>
                         <select name="genre_id" id="genreId">
-                        @foreach($genres as $genre)
-                            <option value="{{$genre->genre_id}}">{{$genre->titre}}</option>
+                        @foreach($films as $film)
+                            <option value="{{$film->genre_id}}">{{$film->genres->titre}}</option>
                         @endforeach
                         </select>
                     </div>
