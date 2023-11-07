@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 Route::get('pokemons', [PokemonsController::class, 'index']);
 
-Route::get('netflixs', [NetflixsController::class, 'index']);
+Route::get('netflixs', [NetflixsController::class, 'index'])->name('netflix');
 
 Route::get('/films/creation', [FilmsController::class, 'create'])->name('films.create');
 

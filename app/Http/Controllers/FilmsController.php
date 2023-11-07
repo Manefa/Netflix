@@ -37,19 +37,4 @@ class FilmsController extends Controller
 
     }
 
-    public function show(Film $film)
-    {
-        return View('Netflix.zoom', compact('film'));
-    }
-
-    public function create() {
-        $personnes = Personne::orderBy('nom')->get();
-        $genres = Genre::orderBy('titre')->get();
-        return View('Netflix.create', compact('personnes','genres'));
-    }
-
-    public function store(Request $request) {
-
-    }
-
 }
