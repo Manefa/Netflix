@@ -9,7 +9,19 @@ class Personne extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['nom', 'date_naissance', 'photo', 'role_principal', 'biographie'];
+
     public function filmRealises(){
         return $this->hasMany(Film::class, 'realisateur_id');
     }
+
+    /**
+     * Un acteur joue dans plusieurs films
+     */
+
+    public function films() 
+    {
+        return $this->belongsToMany('Film::class');
+    }
+
 }
