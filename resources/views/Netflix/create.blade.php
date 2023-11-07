@@ -48,11 +48,11 @@
                         @endforeach
                         </select>
                         <label for="lienFilm">Lien du film</label>
-                        <input type="text" class="form-control" id="lienFilm" placeholder="Lien" name="lienfilm">
+                        <input type="url" class="form-control" id="lienFilm" placeholder="Lien" name="lienfilm">
                         <label for="pochetteURL">URL de la pochette</label>
-                        <input type="text" class="form-control" id="pochetteURL" placeholder="Pochette" name="pochette_url">
+                        <input type="url" class="form-control" id="pochetteURL" placeholder="Pochette" name="pochette_url">
                         <label for="couvertureURL">URL de la couverture</label>
-                        <input type="text" class="form-control" id="couvertureURL" placeholder="Couverture" name="couverture_url">
+                        <input type="url" class="form-control" id="couvertureURL" placeholder="Couverture" name="couverture_url">
                         <label for="coteFilm">Cote du film</label>
                         <input type="number" class="form-control" id="coteFilm" placeholder="Cote" name="cote">
                         <label for="notationFilm">Notation du film</label>
