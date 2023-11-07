@@ -22,7 +22,7 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 1, // ID du réalisateur
                 'producteur_id' => 2, // ID du producteur
-                'lien_film' => 'https://youtu.be/PLl99DlL6b4?si=VtIxKVoK1t9utkjF',
+                'lienfilm' => 'https://www.youtube.com/embed/PLl99DlL6b4?si=dUViDoPNJ2ow0GSv',
                 'couverture_url' => 'https://images1.resources.foxtel.com.au/store2/mount1/16/2/7mdi0.jpg',
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg',
                 'cote' => 70,
@@ -39,7 +39,7 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 3, // ID du réalisateur
                 'producteur_id' => 4, // ID du producteur
-                'lienfilm' => 'https://youtu.be/UaVTIH8mujA?si=zSTQqrUEpHUkBp5T',
+                'lienfilm' => 'https://www.youtube.com/embed/UaVTIH8mujA?si=2RFLt5ng7Mz1ALIg',
                 'couverture_url' => 'https://images5.alphacoders.com/131/1315822.jpg',
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg',
                 'cote' => 50,
@@ -56,7 +56,7 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 5, // ID du réalisateur
                 'producteur_id' => 6, // ID du producteur
-                'lienfilm' => 'https://youtu.be/YoHD9XEInc0?si=PlQQCnjFvdiYUbBb',
+                'lienfilm' => 'https://www.youtube.com/embed/YoHD9XEInc0?si=xHuQibBNJjeoC1E5',
                 'couverture_url' => 'https://i0.wp.com/images.onwardstate.com/uploads/2010/10/inception.png?fit=1593%2C947&ssl=1',
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg',
                 'cote' => 40,
@@ -73,7 +73,7 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 7, // ID du réalisateur
                 'producteur_id' => 8, // ID du producteur
-                'lienfilm' => 'https://youtu.be/s7EdQ4FqbhY?si=GEhrFy8y4GY9bYjP',
+                'lienfilm' => 'https://www.youtube.com/embed/s7EdQ4FqbhY?si=1oI1I7CbH9_N_dTA',
                 'couverture_url' => 'https://wallpapercave.com/wp/wp7665508.jpg',
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg',
                 'cote' => 90,
@@ -90,7 +90,7 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 9, // ID du réalisateur
                 'producteur_id' => 10, // ID du producteur
-                'lienfilm' => 'https://youtu.be/vKQi3bBA1y8?si=G7SVLLVPAtCPvtGQ',
+                'lienfilm' => 'https://www.youtube.com/embed/zE7PKRjrid4?si=sEndt6GTZCY77rKs',
                 'couverture_url' => 'https://wallpapers.com/images/hd/neon-green-the-matrix-dvd-cover-i63w4lhdvf0ku4sc.jpg',
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg',
                 'cote' => 70,
@@ -107,7 +107,7 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 5, // ID du réalisateur
                 'producteur_id' => 6, // ID du producteur
-                'lienfilm' => 'https://youtu.be/XHhAG-YLdk8?si=P0ZjafkSLGw4P-1q',
+                'lienfilm' => 'https://www.youtube.com/embed/XHhAG-YLdk8?si=Zp9sKsywCQ8fj7J7',
                 'couverture_url' => 'https://wallpapers.com/images/hd/tom-hanks-quality-forrest-gump-poster-3kekahja8v9rsdms.jpg',
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg',
                 'cote' => 70,
@@ -124,7 +124,7 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 10, // ID du réalisateur
                 'producteur_id' => 8, // ID du producteur
-                'lienfilm' => 'https://youtu.be/EXeTwQWrcwY?si=lRkoTAfrHgP2Ow5B',
+                'lienfilm' => 'https://www.youtube.com/embed/EXeTwQWrcwY?si=kO2PGrD6RCJV8Jda',
                 'couverture_url' => 'https://c.wallhere.com/photos/d6/b7/The_Dark_Knight_Rises_Batman_Christian_Bale_Dark_Knight_Trilogy_fire-57121.jpg',
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg',
                 'cote' => 80,
@@ -141,7 +141,7 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 10, // ID du réalisateur
                 'producteur_id' => 6, // ID du producteur
-                'lienfilm' => 'https://youtu.be/eCKRI2wEw7I?si=fAHU3zjGSVANo3yj',
+                'lienfilm' => 'https://www.youtube.com/embed/CR5Jp_ag2M8?si=wg9xNlLF-7C7c2gc',
                 'couverture_url' => 'https://images.alphacoders.com/204/204471.jpg',
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BODQ0OWJiMzktYjNlYi00MzcwLThlZWMtMzRkYTY4ZDgxNzgxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg',
                 'cote' => 90,
@@ -158,7 +158,7 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 1, // ID du réalisateur
                 'producteur_id' => 8, // ID du producteur
-                'lienfilm' => 'https://youtu.be/2LqzF5WauAw?si=oTe9BJn-YnSiCZ9A',
+                'lienfilm' => 'https://www.youtube.com/embed/zSWdZVtXT7E?si=bwcrJ37R8iI8Ahch',
                 'couverture_url' => 'https://i.ytimg.com/vi/LuDaYOjZ8Qw/hqdefault.jpg',
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg',
                 'cote' => 80,
@@ -175,7 +175,7 @@ class FilmsTableSeeder extends Seeder
                 'brand' => 'Hoolywood',
                 'realisateur_id' => 1, // ID du réalisateur
                 'producteur_id' => 8, // ID du producteur
-                'lienfilm' => 'https://youtu.be/WAXxFGfnfgY?si=vhL1q6l-vGFC_EOl',
+                'lienfilm' => 'https://www.youtube.com/embed/WAXxFGfnfgY?si=07F9lGsXuWr91Cf7',
                 'couverture_url' => 'https://media.ngroup.be/IMAGE/IMAGE-S1-00028/282141-exorciste23.jpg',
                 'pochette_url' => 'https://fr.web.img6.acsta.net/pictures/23/08/23/17/06/5557233.jpg',
                 'cote' => 80,

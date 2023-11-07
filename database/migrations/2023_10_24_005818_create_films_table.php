@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('brand');
             $table->unsignedBigInteger('realisateur_id');
             $table->unsignedBigInteger('producteur_id');
-            $table->string('lien_film', 255);
+            $table->string('lienfilm', 255);
             $table->string('couverture_url', 255);
             $table->string('pochette_url', 255);
             $table->integer('cote');

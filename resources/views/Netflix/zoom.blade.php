@@ -9,17 +9,26 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <title>Zoom sur {{ $film->titre }}</title>
 </head>
 
 <body style="background-color: black;">
-    <div class="container ">
-        <div style="background-color: black;" class="jumbotron">
-            <h1 class="text-light">{{ $film->titre }}</h1>
-            <p class="text-light">{{ $film->resume }}</p>
-            <p class="text-light">Durée: {{ $film->duree }}min | Année de Production: {{ $film->annee_de_production }}
-                | Cote: PG-13 | Notation: 4.5/5</p>
+    @extends('layouts.app')
+    <div style="background-image: url({{ $film->couverture_url }}); background-size: cover; height: 50vh; "
+        class="jumbotron">
+        <div>
+            <h1 class="text-light" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">{{ $film->titre }}</h1>
+            <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">{{ $film->resume }}</p>
+            <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Durée : {{ $film->duree }}</p>
+            <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);"> Année de Production:
+                {{ $film->annee_de_production }}</p>
         </div>
+    </div>
+
+
+    <div class="container ">
+
 
         <div class="row">
             <div class="col-md-6">
@@ -30,35 +39,43 @@
                         <i class="fas fa-play-circle play-icon"></i>
                     </a>
                 </div>
-                <!-- Genres -->
+                
+            </div>
+
+            <div class="col-md-6">
+                <iframe width="560" height="315" src={{ $film->lienfilm }} title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+
+                    <!-- Genres -->
                 <div class="film-details text-light">
                     <h3>Genres</h3>
-                    <ul>
                         @if (count($film->genres))
                             @foreach ($film->genres as $genre)
-                                <li>{{ $genre->titre }}</li>
+                                <h6>{{ $genre->titre }}</h6>
                             @endforeach
                         @else
                             <p>Il ny a aucun acteur.</p>
                         @endif
-                    </ul>
                 </div>
+
                 <!-- Équipe du film -->
                 <div class="film-details text-light">
                     <h3>Équipe du Film</h3>
-                    
-                    <div class="row m">
+
+                    <div class="row mb-3">
                         <div class="col-md-4">
                             <p>Réalisateur</p>
                         </div>
                         <div class="col-md-4">
-                            <img  src={{ $film->realisateur->photo }} alt="Réalisateur" class="img-fluid">
+                            <img src={{ $film->realisateur->photo }} alt="Réalisateur" class="img-fluid">
 
                         </div>
 
                     </div>
 
-                    <div class="row">
+                    <div class="row mb-3">
                         <div class="col-md-4">
                             <p>Producteur</p>
                         </div>
@@ -69,22 +86,25 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row mb-3">
 
                         <div class="col-md-4">
                             <p>Acteur</p>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
+                            <div class="row">
+                                @if (count($film->acteurs))
+                                    @foreach ($film->acteurs as $acteur)
+                                        <div class="col-md-4">
+                                            <img src={{ $acteur->photo }} alt="Acteur" class="img-fluid">
+                                        </div>
+                                    @endforeach
+                                @else
+                                    <p>Il ny a aucun acteur.</p>
+                                @endif
 
-                            @if (count($film->acteurs))
-                                @foreach ($film->acteurs as $acteur)
-                                    <img src={{ $acteur->photo }} alt="Acteur" class="img-fluid">
-                                @endforeach
-                            @else
-                                <p>Il ny a aucun acteur.</p>
-                            @endif
-
+                            </div>
                         </div>
                     </div>
                 </div>
