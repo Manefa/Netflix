@@ -59,8 +59,8 @@
                         <input type="text" class="form-control" id="notationFilm" placeholder="Notation" name="notation">
                         <label for="genreId">Genre du film</label>
                         <select name="genre_id" id="genreId">
-                        @foreach($films as $film)
-                            <option value="{{$film->genre_id}}">{{$film->genres->titre}}</option>
+                        @foreach($genres as $genre)
+                            <option value="{{$genre->id}}">{{$genre->titre}}</option>
                         @endforeach
                         </select>
                     </div>
