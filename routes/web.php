@@ -22,8 +22,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('pokemons', [PokemonsController::class, 'index']);
-
 Route::get('netflixs', [NetflixsController::class, 'index'])->name('netflix');
 
 Route::get('/films/creation', [FilmsController::class, 'create'])->name('films.create');
@@ -32,7 +30,7 @@ Route::post('/films', [FilmsController::class, 'store'])->name('films.store');
 
 Route::get('/personnes/creation', [PersonnesController::class, 'create'])->name('personnes.create');
 
-Route::post('/personnes', [PersonnesController::class, 'store'])->name('personnes.store');
+Route::post('/personnes',  [PersonnesController::class, 'store'])->name('personnes.store');
 
 Route::get('/netflixs/{film}/', [FilmsController::class, 'zoom'])->name('netflixs.zoom');
 

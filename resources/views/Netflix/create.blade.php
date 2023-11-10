@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap 4.4.1 -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
-    <!-- Flickity 2.2.1 -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/flickity.css')}}">
-    <!-- JQuery UI -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/jquery-ui.css')}}">
-    <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-
-    <title>Formulaire - Ajout de film</title>
-</head>
-
-<body>
-    @extends('layouts.app')
+@extends('layouts.app')
+ 
+@section('title', "Zoom Film")
+ 
+@section('contenu')
     <div class="container-fluid w-50" style="margin-top: 100px;">
         <div class="row">
             <div class="col-xl-12">
@@ -67,5 +51,4 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+    @endsection

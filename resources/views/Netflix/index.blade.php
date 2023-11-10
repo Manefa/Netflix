@@ -1,56 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <title> Netflix </title>
+@section('title', 'Zoom Film')
 
-    <!-- SEO -->
-    <title> Netflix redesign by Eduard Aymerich. </title>
-    <meta name="description" content="Netflix redesign by Eduard Aymerich. ">
-
-    <!-- Bootstrap 4.4.1 -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
-    <!-- Flickity 2.2.1 -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/flickity.css')}}">
-    <!-- JQuery UI -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/jquery-ui.css')}}">
-    <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-
-    <!-- Icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
-
-    <!-- TWITTER -->
-    <meta name="twitter:card carousel-cell" content="summary_large_image">
-    <meta name="twitter:site" content="@eduayme">
-    <!-- EDIT -->
-    <meta name="twitter:creator" content="@eduayme">
-    <!-- EDIT -->
-    <meta name="twitter:title" content="Netflix">
-    <!-- EDIT -->
-    <meta name="twitter:description" content="Netflix redesign by Eduard Aymerich.">
-
-    <!-- FAVICONS -->
-    <link rel="shortcut icon" type="image/x-icon" href="media/images/netflix_icon.png">
-    <link rel="shortcut icon" sizes="16x16" href="media/favicon/favicon-16x16.png">
-    <link rel="shortcut icon" sizes="32x32" href="media/favicon/favicon-32x32.png">
-    <link rel="apple-touch-icon icon" sizes="76x76" href="media/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon icon" sizes="120x120" href="media/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon icon" sizes="152x152" href="media/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon icon" sizes="180x180" href="media/favicon/apple-icon-180x180.png">
-
-    <!-- Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#141414">
-</head>
-
-<body>
-    @extends('layouts.app')
-
-
+@section('contenu')
     <!-- Slider - OPEN -->
     <div id="mainCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -88,13 +40,11 @@
                     </p>
                     <p> Creators: <a href="#">{{ $films[0]->producteur->nom }}</a> </p>
                     <div class="margin-top-under-sm">
-                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
-                            aria-pressed="true">
+                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button" aria-pressed="true">
                             <img src="media/icons/play.png" width="20" alt="">
                             Watch
                         </a>
-                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button"
-                            aria-pressed="true">
+                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button" aria-pressed="true">
                             <img src="media/icons/plus.png" width="15" alt="">
                             Add List
                         </a>
@@ -131,13 +81,11 @@
                     </p>
                     <p> Creators: <a href="#">{{ $films[1]->producteur->nom }}</a> </p>
                     <div class="margin-top-under-sm">
-                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
-                            aria-pressed="true">
+                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button" aria-pressed="true">
                             <img src="media/icons/play.png" width="20" alt="">
                             Watch
                         </a>
-                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button"
-                            aria-pressed="true">
+                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button" aria-pressed="true">
                             <img src="media/icons/plus.png" width="15" alt="">
                             Add List
                         </a>
@@ -173,13 +121,11 @@
                     </p>
                     <p> Creators: <a href="#">{{ $films[1]->producteur->nom }}</a> </p>
                     <div class="margin-top-under-sm">
-                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
-                            aria-pressed="true">
+                        <a href="#" class="btn btn-primary btn-lg margin-right" role="button" aria-pressed="true">
                             <img src="media/icons/play.png" width="20" alt="">
                             Watch
                         </a>
-                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button"
-                            aria-pressed="true">
+                        <a href="#" class="btn btn-secondary btn-lg margin-right" role="button" aria-pressed="true">
                             <img src="media/icons/plus.png" width="15" alt="">
                             Add List
                         </a>
@@ -267,7 +213,8 @@
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="{{ route('films.show', [$film]) }}" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                <a href="{{ route('films.show', [$film]) }}"
+                                    class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
                                     aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info
@@ -291,8 +238,7 @@
 
 
             <!-- Popular tab - OPEN -->
-            <div class="margin-top-under-sm tab-pane fade" id="popular" role="tabpanel"
-                aria-labelledby="popular-tab">
+            <div class="margin-top-under-sm tab-pane fade" id="popular" role="tabpanel" aria-labelledby="popular-tab">
                 Popular
             </div>
             <!-- Popular tab - CLOSE -->
@@ -304,8 +250,7 @@
             <!-- New tab - CLOSE -->
 
             <!-- Oscars tab - OPEN -->
-            <div class="margin-top-under-sm tab-pane fade" id="oscars" role="tabpanel"
-                aria-labelledby="oscars-tab">
+            <div class="margin-top-under-sm tab-pane fade" id="oscars" role="tabpanel" aria-labelledby="oscars-tab">
                 Oscars 2020
             </div>
             <!-- Oscars tab - CLOSE -->
@@ -349,8 +294,7 @@
                     @if (count($genres))
                         @foreach ($genres as $genre)
                             <div class="carousel-filter-cell text-center">
-                                <button class="btn btn-outline-primary btn-md margin-top-under-sm"
-                                    data-filter=".Action">
+                                <button class="btn btn-outline-primary btn-md margin-top-under-sm" data-filter=".Action">
                                     {{ $genre->titre }}
                                 </button>
                             </div>
@@ -400,13 +344,12 @@
 
                         @if (count($films))
                             @foreach ($films as $film)
-                                
                                 <div class="card carousel-cell">
-                                    <img class="card-img-top" src= {{$film->pochette_url}} />
-                                    <h5 class="card-title text-center"> {{$film->titre}} </h5>
+                                    <img class="card-img-top" src={{ $film->pochette_url }} />
+                                    <h5 class="card-title text-center"> {{ $film->titre }} </h5>
                                     <div class="row">
                                         <div class="col-3 text-left no-padding">
-                                            {{$film->annee_de_production}}
+                                            {{ $film->annee_de_production }}
                                         </div>
                                         <div class="col-3 text-center no-padding">
                                             <a href="">
@@ -421,7 +364,7 @@
                                         <div class="col-3 text-right no-padding rating">
                                             <img src= "media/icons/star.png" width="10" alt=""
                                                 class="padding-bottom-sm">
-                                                {{$film->cote}}
+                                            {{ $film->cote }}
                                         </div>
                                     </div>
                                     <div class="overlay">
@@ -454,8 +397,7 @@
             <!-- Movies tab - CLOSE -->
 
             <!-- TV Shows tab - OPEN -->
-            <div class="margin-bottom tab-pane fade show" id="tvshows" role="tabpanel"
-                aria-labelledby="tvshows-tab">
+            <div class="margin-bottom tab-pane fade show" id="tvshows" role="tabpanel" aria-labelledby="tvshows-tab">
                 TV Shows
             </div>
             <!-- TV Shows tab - CLOSE -->
@@ -483,6 +425,4 @@
     <!-- Main JS -->
     <script src="js/main.js" defer></script>
 
-</body>
-
-</html>
+@endsection

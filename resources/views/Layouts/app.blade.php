@@ -15,7 +15,33 @@
     <!-- Main CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
 
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
+    <!-- SOCIAL CARDS (ADD YOUR INFO) -->
+
+    <!-- TWITTER -->
+    <meta name="twitter:card carousel-cell" content="summary_large_image">
+    <meta name="twitter:site" content="@eduayme">
+    <!-- EDIT -->
+    <meta name="twitter:creator" content="@eduayme">
+    <!-- EDIT -->
+    <meta name="twitter:title" content="Netflix">
+    <!-- EDIT -->
+    <meta name="twitter:description" content="Netflix redesign by Eduard Aymerich.">
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" type="image/x-icon" href="media/images/netflix_icon.png">
+    <link rel="shortcut icon" sizes="16x16" href="media/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" sizes="32x32" href="media/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="media/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="media/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="media/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="media/favicon/apple-icon-180x180.png">
+
+    <!-- Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#141414">
     <title>Navbar</title>
 </head>
 
@@ -74,7 +100,7 @@
         <div class="container-lg">
 
             <!-- Logo - OPEN -->
-            <a class="navbar-brand logo" href="/netflix">
+            <a class="navbar-brand logo" href="/netflixs">
                 <img src="{{ asset('media/images/logo.png') }}" width="80" alt="">
             </a>
             <!-- Logo - CLOSE -->
@@ -118,11 +144,12 @@
                     </li>
                     <li class="nav-item mr-2">
                         <div class="btn-group nav-link float-center">
-                            <i class="bi bi-person dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1.5rem; color:white;"></i>
-                            
+                            <i class="bi bi-person dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false" style="font-size: 1.5rem; color:white;"></i>
+
                             <div class="dropdown-menu">
                                 <a class="dropdown-item active" href="#">Lister</a>
-                                <a class="dropdown-item" href="{{ route('personnes.create') }}" >Ajouter</a>
+                                <a class="dropdown-item" href="{{ route('personnes.create') }}">Ajouter</a>
                             </div>
                         </div>
                     </li>
@@ -142,6 +169,43 @@
 
     </nav>
     <!-- Navbar - CLOSE -->
+    @yield('contenu')
+
+    <!-- FOOTER -->
+    <!-- LINKS -->
+    <section class="link">
+        <div class="logos">
+            <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
+            <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x logo"></i></a>
+            <a href="#"><i class="fab fa-youtube fa-2x logo"></i></a>
+        </div>
+        <div class="sub-links">
+            <ul>
+                <li><a href="#">Audio and Subtitles</a></li>
+                <li><a href="#">Audio Description</a></li>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Media Center</a></li>
+                <li><a href="#">Investor Relations</a></li>
+                <li><a href="#">Jobs</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Legal Notices</a></li>
+                <li><a href="#">Corporate Information</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </section>
+    <!-- END OF LINKS -->
+
+    <footer>
+        <p>&copy 1997-2018 Netflix, Inc.</p>
+        <p>Carlos Avila &copy 2018</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
