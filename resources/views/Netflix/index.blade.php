@@ -264,7 +264,7 @@
                         </div>
                         <div class="overlay">
                             <div class="text">
-                                <a href="#" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
+                                <a href="{{ route('films.show', [$film]) }}" class="btn btn-secondary btn-sm margin-top-under-sm" role="button"
                                     aria-pressed="true">
                                     <img src="media/icons/info.png" width="10" alt="">
                                     Info

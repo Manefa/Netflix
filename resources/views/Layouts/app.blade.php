@@ -118,6 +118,11 @@
                             <img src="media/icons/bell.png" width="20" alt="">
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link float-center" href="#">
+                            <img src="media/icons/bell.png" width="20" alt="">
+                        </a>
+                    </li>
                     <li class="nav-item avatar">
                         <a class="float-right" href="https://github.com/eduayme" target="_blank">
                             <img class="avatar" src="media/icons/avatar.png" alt="">
