@@ -15,7 +15,8 @@ class PersonnesController extends Controller
      */
     public function index()
     {
-        //
+        $personnes = Personne::all();
+        return View('Personne.liste', compact('personnes'));
     }
 
     /**

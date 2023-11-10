@@ -104,15 +104,6 @@ class PersonnesTableSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
-            [
-                'nom' => 'Angelina Jolie',
-                'date_naissance' => '1975-06-04',
-                'photo' => 'https://m.media-amazon.com/images/M/MV5BNmU4MjBmMWItYmYzYS00ZmEyLWJhN2ItOTJkZDBlYjJjMzZlXkEyXkFqcGdeQXVyMTE0MzQwMjgz._V1_QL75_UX500_CR0,26,500,281_.jpg',
-                'role_principal' => 'Actrice',
-                'biographie' => 'Angelina Jolie, née le 4 juin 1975 à Los Angeles, est une actrice, réalisatrice, scénariste, productrice, mannequin, écrivaine et ambassadrice de bonne volonté américano-cambodgienne. Elle a reçu trois Golden Globes, deux Screen Actors Guild Awards et un Oscar du cinéma.',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
         ]);
     }
 }

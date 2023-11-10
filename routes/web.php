@@ -18,15 +18,19 @@ use App\HTTP\Controllers\PersonnesController;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
+
+Route::get('/', [NetflixsController::class, 'index'])->name('netflix');
 
 Route::get('netflixs', [NetflixsController::class, 'index'])->name('netflix');
 
 Route::get('/films/creation', [FilmsController::class, 'create'])->name('films.create');
 
 Route::post('/films', [FilmsController::class, 'store'])->name('films.store');
+
+Route::get('/personnes/liste', [PersonnesController::class, 'index'])->name('personnes.liste');
 
 Route::get('/personnes/creation', [PersonnesController::class, 'create'])->name('personnes.create');
 
