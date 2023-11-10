@@ -7,6 +7,7 @@ use App\Models\Genre;
 use Faker\Provider\ar_EG\Person;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Http\Requests\FilmRequest;
 
 class FilmsController extends Controller
 {
@@ -31,13 +32,15 @@ class FilmsController extends Controller
     public function create() {
         $films = Film::all();
         $genres = Genre::orderBy('titre')->get();
-        return View('Netflix.create', compact('films','genres'));
+        $personnes = Personne::all();
+        return View('Netflix.create', compact('films','genres', 'personnes'));
     }
 
 
-    public function store(Request $request) {
+    public function store(FilmRequest $request) {
         try {
             $film = new Film($request->all());
+            //dd($film);
             $film->save();
         }
         catch(\Throwable $e) {

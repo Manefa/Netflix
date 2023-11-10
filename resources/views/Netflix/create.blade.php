@@ -14,6 +14,9 @@
     <!-- Main CSS -->
     <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
 
+
+    <link href="{{asset('mobiscroll/css/mobiscroll.javascript.min.css')}}" rel="stylesheet" />
+    <script src="{{asset('mobiscroll/js/mobiscroll.javascript.min.js')}}"></script>
     <title>Formulaire - Ajout de film</title>
 </head>
 
@@ -35,14 +38,20 @@
                         <input type="text" class="form-control" id="anneeFilm" placeholder="Année" name="annee_de_production">
                         <label for="brandFilm">Brand</label>
                         <input type="text" class="form-control" id="brandFilm" placeholder="Brand" name="brand">
-                        <label for="realisateurId">Réalisateur du film</label>
-                        <select name="realisateur_id" id="realisateurId">
+                        <label>
+                            Réalisateur du film
+                            <input mbsc-input id="realisateurInput" data-dropdown="true"/>
+                        </label>
+                        <select name="realisateur_id" id="single-select1">
                         @foreach($films as $film)
                             <option value="{{$film->realisateur_id}}">{{$film->realisateur->nom}}</option>
                         @endforeach
                         </select>
-                        <label for="producteurId">Producteur du film</label>
-                        <select name="producteur_id" id="producteurId">
+                        <label>
+                            Producteur du film
+                            <input mbsc-input id="producteurInput" data-dropdown="true"/>
+                        </label>
+                        <select name="producteur_id" id="single-select2">
                         @foreach($films as $film)
                             <option value="{{$film->producteur_id}}">{{$film->producteur->nom}}</option>
                         @endforeach
@@ -63,6 +72,16 @@
                             <option value="{{$genre->id}}">{{$genre->titre}}</option>
                         @endforeach
                         </select>
+                        <label>
+                            Acteurs du film
+                            <input mbsc-input id="personneInput" data-dropdown="true" data-tags="true" />
+                        </label>
+                        <select name="personne_id" id="multiple-select" multiple>
+                        @foreach($personnes as $personne)
+                            <option value="{{$personne->id}}">{{$personne->nom}}</option>
+                        @endforeach
+                        </select>
+                        
                     </div>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </form>
@@ -70,4 +89,20 @@
         </div>
     </div>
 </body>
+<script>
+    mobiscroll.select('#multiple-select', {
+    inputElement: document.getElementById('personneInput'),
+    touchUi: false,
+    defaultValue: '1'
+});
+mobiscroll.select('#single-select1', {
+    inputElement: document.getElementById('realisateurInput'),
+    touchUi: false,
+});
+
+mobiscroll.select('#single-select2', {
+    inputElement: document.getElementById('producteurInput'),
+    touchUi: false,
+});
+</script>
 </html>
