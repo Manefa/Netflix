@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PersonneAdd;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use App\Models\Personne;
 
-class PokemonsController extends Controller
+
+class PersonnesController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return View('Pokemons.index');
+        //
     }
 
     /**
@@ -19,7 +23,7 @@ class PokemonsController extends Controller
      */
     public function create()
     {
-        //
+        return View('personne.create');
     }
 
     /**
@@ -27,7 +31,21 @@ class PokemonsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $name = request()->nom;
+
+        event(new PersonneAdd($name));
+
+        try {
+            $personne = new Personne($request->all());
+            $personne->save();
+        } catch (\Throwable $e) {
+            //Gérer l'erreur
+            Log::debug($e);
+        }
+        return redirect()->route('personnes.create');
+
+
+        return View('personnes.create');
     }
 
     /**
