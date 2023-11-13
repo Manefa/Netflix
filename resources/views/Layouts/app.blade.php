@@ -104,7 +104,7 @@
         <div class="container-lg">
 
             <!-- Logo - OPEN -->
-            <a class="navbar-brand logo" href="/netflixss">
+            <a class="navbar-brand logo" href="/netflixs">
                 <img src="{{ asset('media/images/logo.png') }}" width="80" alt="">
             </a>
             <!-- Logo - CLOSE -->
