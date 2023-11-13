@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\PersonneAdd;
+use App\Http\Requests\PersonneRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Personne;
@@ -60,17 +61,33 @@ class PersonnesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Personne $personne)
     {
-        //
+        return View('personne.modifier', compact('personne'));
+
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PersonneRequest $request, Personne $personne)
     {
-        //
+        try {
+            $personne->nom = $request->nom;
+            $personne->date_naissance = $request->date_naissance;
+            $personne->photo = $request->photo;
+            $personne->role_principal = $request->role_principal;
+            $personne->biographie = $request->biographie;
+
+            $personne->save();
+            return redirect()->route('personnes.liste')->with('message', "Modification de " . $personne->nom . " réussi!");
+        } catch (\Throwable $e) {
+            //Gérer l'erreur
+            Log::debug($e);
+            return redirect()->route('personnes.liste')->withErrors(['la modification n\'a pas fonctionné']);
+        }
+        return redirect()->route('personnes.liste');
+
     }
 
     /**

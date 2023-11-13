@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Personne extends Model
 {
+    protected $table = 'personnes';
     use HasFactory;
 
     protected $fillable = ['nom', 'date_naissance', 'photo', 'role_principal', 'biographie'];
