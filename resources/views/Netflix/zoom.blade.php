@@ -64,6 +64,19 @@
                 <div class="film-details text-light">
                     <h3>Équipe du Film</h3>
 
+                    <div class="row mb-2">
+                        @if (count($film->acteurs))
+                            @foreach ($film->acteurs as $acteur)
+                                <div class="col-md-4 mt-2 img-container">
+                                    <img src="{{ $acteur->photo }}" alt="" class="img-fluid w-100 h-100">
+                                    <div class="actor-name">{{ $acteur->nom }}</div>
+                                </div>
+                            @endforeach
+                        @else
+                            <p>Il n'y a aucun acteur.</p>
+                        @endif
+                    </div>
+
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <p>Réalisateur</p>
@@ -83,28 +96,6 @@
                         <div class="col-md-4">
                             <img src={{ $film->producteur->photo }} alt="Producteur" class="img-fluid">
 
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-
-                        <div class="col-md-4">
-                            <p>Acteur</p>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                @if (count($film->acteurs))
-                                    @foreach ($film->acteurs as $acteur)
-                                        <div class="col-md-4">
-                                            <img src={{ $acteur->photo }} alt="Acteur" class="img-fluid">
-                                        </div>
-                                    @endforeach
-                                @else
-                                    <p>Il ny a aucun acteur.</p>
-                                @endif
-
-                            </div>
                         </div>
                     </div>
                 </div>
