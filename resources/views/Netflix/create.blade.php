@@ -19,22 +19,30 @@
                         <input type="text" class="form-control" id="anneeFilm" placeholder="Année" name="annee_de_production">
                         <label for="brandFilm">Brand</label>
                         <input type="text" class="form-control" id="brandFilm" placeholder="Brand" name="brand">
-                        <label for="realisateurId">Réalisateur du film</label>
-                        <select name="realisateur_id" id="realisateurId">
-                        @foreach($personnes as $personne)
-                            <option value="{{$personne->realisateur_id}}">{{$personne->nom}}</option>
+                        <label>
+                            Réalisateur du film
+                            <input mbsc-input id="realisateurInput" data-dropdown="true"/>
+                        </label>
+                        <select name="realisateur_id" id="single-select1">
+                        @foreach($films as $film)
+                            <option value="{{$film->realisateur_id}}">{{$film->realisateur->nom}}</option>
                         @endforeach
                         </select>
-                        <label for="producteurId">Producteur du film</label>
-                        <select name="producteur_id" id="producteurId">
-                        @foreach($personnes as $personne)
-                            <option value="{{$personne->producteur_id}}">{{$personne->nom}}</option>
+                        <label>
+                            Producteur du film
+                            <input mbsc-input id="producteurInput" data-dropdown="true"/>
+                        </label>
+                        <select name="producteur_id" id="single-select2">
+                        @foreach($films as $film)
+                            <option value="{{$film->producteur_id}}">{{$film->producteur->nom}}</option>
                         @endforeach
                         </select>
                         <label for="lienFilm">Lien du film</label>
-                        <input type="text" class="form-control" id="lienFilm" placeholder="Lien" name="lien_film">
+                        <input type="url" class="form-control" id="lienFilm" placeholder="Lien" name="lienfilm">
                         <label for="pochetteURL">URL de la pochette</label>
-                        <input type="text" class="form-control" id="pochetteURL" placeholder="Pochette" name="pochette_url">
+                        <input type="url" class="form-control" id="pochetteURL" placeholder="Pochette" name="pochette_url">
+                        <label for="couvertureURL">URL de la couverture</label>
+                        <input type="url" class="form-control" id="couvertureURL" placeholder="Couverture" name="couverture_url">
                         <label for="coteFilm">Cote du film</label>
                         <input type="number" class="form-control" id="coteFilm" placeholder="Cote" name="cote">
                         <label for="notationFilm">Notation du film</label>
@@ -42,13 +50,39 @@
                         <label for="genreId">Genre du film</label>
                         <select name="genre_id" id="genreId">
                         @foreach($genres as $genre)
-                            <option value="{{$genre->genre_id}}">{{$genre->titre}}</option>
+                            <option value="{{$genre->id}}">{{$genre->titre}}</option>
                         @endforeach
                         </select>
+                        <label>
+                            Acteurs du film
+                            <input mbsc-input id="personneInput" data-dropdown="true" data-tags="true" />
+                        </label>
+                        <select name="personne_id" id="multiple-select" multiple>
+                        @foreach($personnes as $personne)
+                            <option value="{{$personne->id}}">{{$personne->nom}}</option>
+                        @endforeach
+                        </select>
+                        
                     </div>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </form>
             </div>
         </div>
     </div>
-    @endsection
+</body>
+<script>
+    mobiscroll.select('#multiple-select', {
+    inputElement: document.getElementById('personneInput'),
+    touchUi: false,
+    defaultValue: '1'
+});
+mobiscroll.select('#single-select1', {
+    inputElement: document.getElementById('realisateurInput'),
+    touchUi: false,
+});
+
+mobiscroll.select('#single-select2', {
+    inputElement: document.getElementById('producteurInput'),
+    touchUi: false,
+});
+@endsection
