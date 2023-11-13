@@ -14,6 +14,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/jquery-ui.css') }}">
     <!-- Main CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/footer.css') }}">
+    <!-- Actor CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/actor.css') }}">
 
     <!-- Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
@@ -148,7 +152,7 @@
                                 aria-expanded="false" style="font-size: 1.5rem; color:white;"></i>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item active" href="#">Lister</a>
+                                <a class="dropdown-item" href="{{ route('personnes.liste') }}">Lister</a>
                                 <a class="dropdown-item" href="{{ route('personnes.create') }}">Ajouter</a>
                             </div>
                         </div>
@@ -175,10 +179,10 @@
     <!-- LINKS -->
     <section class="link">
         <div class="logos">
-            <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
-            <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
-            <a href="#"><i class="fab fa-twitter fa-2x logo"></i></a>
-            <a href="#"><i class="fab fa-youtube fa-2x logo"></i></a>
+            <a href="#"><i class="bi bi-facebook" style="font-size: 1.5rem; color:gray"></i></a>
+            <a href="#"><i class="bi bi-instagram" style="font-size: 1.5rem; color:gray"></i></a>
+            <a href="#"><i class="bi bi-twitter" style="font-size: 1.5rem; color:gray"></i></a>
+            <a href="#"><i class="bi bi-youtube" style="font-size: 1.5rem; color:gray"></i></a>
         </div>
         <div class="sub-links">
             <ul>
