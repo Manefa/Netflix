@@ -6,6 +6,7 @@ use App\HTTP\Controllers\PokemonsController;
 use App\HTTP\Controllers\NetflixsController;
 use App\HTTP\Controllers\FilmsController;
 use App\HTTP\Controllers\PersonnesController;
+use App\HTTP\Controllers\UsagersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,13 @@ Route::get('/netflixs/{film}/', [FilmsController::class, 'zoom'])->name('netflix
 Route::get('/films/{film}/', [FilmsController::class, 'show'])->name('films.show');
 
 Route::get('/films/{film}/', [FilmsController::class, 'show'])->name('films.show');
+
+/*Authentification*/
+
+Route::get('/login', [UsagersController::class, 'index'])->name('showLoginForm');
+Route::post('/login', [UsagersController::class])->name('login');
+Route::post('/logout', [UsagersController::class, 'show'])->name('logout');
+
 
 
 

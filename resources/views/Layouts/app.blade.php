@@ -158,7 +158,7 @@
                         </div>
                     </li>
                     <li class="nav-item avatar">
-                        <a class="float-right" href="/netflix" target="_blank">
+                        <a class="float-right" href="{{ route('showLoginForm') }}">
                             <img class="avatar" src="{{ asset('media/icons/avatar.png') }}" alt="">
                         </a>
                     </li>
