@@ -19,6 +19,10 @@
     <!-- Actor CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/actor.css') }}">
 
+    <link href="{{asset('mobiscroll/css/mobiscroll.javascript.min.css')}}" rel="stylesheet" />
+    
+    <script src="{{asset('mobiscroll/js/mobiscroll.javascript.min.js')}}"></script>
+
     <!-- Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
