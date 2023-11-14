@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Film;
 use App\Models\Personne;
 use App\Models\Genre;
+use App\Models\Langue;
 use Faker\Provider\ar_EG\Person;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -33,7 +34,8 @@ class FilmsController extends Controller
         $films = Film::all();
         $genres = Genre::orderBy('titre')->get();
         $personnes = Personne::all();
-        return View('Netflix.create', compact('films','genres', 'personnes'));
+        $langues = Langue::all();
+        return View('Netflix.create', compact('films','genres', 'personnes', 'langues'));
     }
 
 
@@ -43,11 +45,9 @@ class FilmsController extends Controller
             //dd($film);
             //dd($request);
             $film->save();
-            $film->acteurs()->attach($request->input('personne_id'), ['created_at' => now()]);
-            $film->acteurs()->attach($request->input('personne_id'), ['updated_at' => now()]);
-            $film->acteurs()->attach($request->input('personne_id'));
-            
-            
+            $film->acteurs()->attach($request->input('personne_id'), ['created_at' => now(), 'updated_at' => now()]);
+            //$film->genres()->attach($request->input('genre_id'), ['created_at' => now(), 'updated_at' => now()]);
+            $film->langues()->attach($request->input('langue_id'), ['created_at' => now(), 'updated_at' => now()]);
         }
         catch(\Throwable $e) {
             Log::debug($e);

@@ -68,9 +68,9 @@
                         <input type="text" class="form-control" id="notationFilm" placeholder="Notation" name="notation">
                         <label>
                             Genre du film
-                            <input mbsc-input id="genreInput" data-dropdown="true"/>
+                            <input mbsc-input id="genreInput" data-dropdown="true" data-tags="true"/>
                         </label>
-                        <select name="genre_id" id="single-select3">
+                        <select name="genre_id" id="multiple-select" multiple>
                         @foreach($genres as $genre)
                             <option value="{{$genre->id}}">{{$genre->titre}}</option>
                         @endforeach
@@ -79,12 +79,20 @@
                             Acteurs du film
                             <input mbsc-input id="personneInput" data-dropdown="true" data-tags="true" />
                         </label>
-                        <select name="personne_id[]" id="multiple-select" multiple>
+                        <select name="personne_id[]" id="multiple-select2" multiple>
                         @foreach($personnes as $personne)
                             <option value="{{$personne->id}}">{{$personne->nom}}</option>
                         @endforeach
                         </select>
-                        
+                        <label>
+                            Langues du film
+                            <input mbsc-input id="langueInput" data-dropdown="true" data-tags="true" />
+                        </label>
+                        <select name="langue_id[]" id="multiple-select3" multiple>
+                        @foreach($langues as $langue)
+                            <option value="{{$langue->id}}">{{$langue->code}}</option>
+                        @endforeach
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </form>
@@ -94,10 +102,23 @@
 </body>
 <script>
     mobiscroll.select('#multiple-select', {
+    inputElement: document.getElementById('genreInput'),
+    touchUi: false,
+    defaultValue: '1'
+});
+
+mobiscroll.select('#multiple-select2', {
     inputElement: document.getElementById('personneInput'),
     touchUi: false,
     defaultValue: '1'
 });
+
+mobiscroll.select('#multiple-select3', {
+    inputElement: document.getElementById('langueInput'),
+    touchUi: false,
+    defaultValue: '1'
+});
+
 mobiscroll.select('#single-select1', {
     inputElement: document.getElementById('realisateurInput'),
     touchUi: false,
@@ -108,9 +129,5 @@ mobiscroll.select('#single-select2', {
     touchUi: false,
 });
 
-mobiscroll.select('#single-select3', {
-    inputElement: document.getElementById('genreInput'),
-    touchUi: false,
-});
 </script>
 </html>
