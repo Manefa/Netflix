@@ -66,8 +66,11 @@
                         <input type="number" class="form-control" id="coteFilm" placeholder="Cote" name="cote">
                         <label for="notationFilm">Notation du film</label>
                         <input type="text" class="form-control" id="notationFilm" placeholder="Notation" name="notation">
-                        <label for="genreId">Genre du film</label>
-                        <select name="genre_id" id="genreId">
+                        <label>
+                            Genre du film
+                            <input mbsc-input id="genreInput" data-dropdown="true"/>
+                        </label>
+                        <select name="genre_id" id="single-select3">
                         @foreach($genres as $genre)
                             <option value="{{$genre->id}}">{{$genre->titre}}</option>
                         @endforeach
@@ -76,7 +79,7 @@
                             Acteurs du film
                             <input mbsc-input id="personneInput" data-dropdown="true" data-tags="true" />
                         </label>
-                        <select name="personne_id" id="multiple-select" multiple>
+                        <select name="personne_id[]" id="multiple-select" multiple>
                         @foreach($personnes as $personne)
                             <option value="{{$personne->id}}">{{$personne->nom}}</option>
                         @endforeach
@@ -102,6 +105,11 @@ mobiscroll.select('#single-select1', {
 
 mobiscroll.select('#single-select2', {
     inputElement: document.getElementById('producteurInput'),
+    touchUi: false,
+});
+
+mobiscroll.select('#single-select3', {
+    inputElement: document.getElementById('genreInput'),
     touchUi: false,
 });
 </script>

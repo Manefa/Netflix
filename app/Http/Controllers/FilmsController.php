@@ -41,23 +41,18 @@ class FilmsController extends Controller
         try {
             $film = new Film($request->all());
             //dd($film);
+            //dd($request);
             $film->save();
+            $film->acteurs()->attach($request->input('personne_id'), ['created_at' => now()]);
+            $film->acteurs()->attach($request->input('personne_id'), ['updated_at' => now()]);
+            $film->acteurs()->attach($request->input('personne_id'));
+            
+            
         }
         catch(\Throwable $e) {
             Log::debug($e);
         }
         return redirect()->route('netflix');
-    }
-
-    public function storeFilmPersonne(Request $request) {
-        try {
-            $film = Film::find($request->film_id);
-            $personne = Personne::find($request->personne_id);
-
-        }
-        catch(\Throwable $e) {
-            Log::debug($e);
-        }
     }
 
 }
