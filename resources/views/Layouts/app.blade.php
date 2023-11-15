@@ -133,9 +133,10 @@
                     </li>
                 </ul>
                 <!-- Left - CLOSE -->
-
+                
                 <!-- Right - OPEN -->
                 <ul class="navbar-nav my-2 my-lg-0 navbar-right">
+                    
                     <li class="nav-item mr-2">
                         <a class="nav-link float-center" href="#">
                             <i style="font-size: 1.5rem; color:white;" class="bi bi-search"></i>
@@ -156,6 +157,11 @@
                                 <a class="dropdown-item" href="{{ route('personnes.create') }}">Ajouter</a>
                             </div>
                         </div>
+                    </li>
+                    <li class="nav-item mr-2">
+                        <a class="nav-link float-center" href="#">
+                            <i style="font-size: 1.5rem; color:red;" class="bi bi-arrow-left-circle"></i>
+                        </a> 
                     </li>
                     <li class="nav-item avatar">
                         <a class="float-right" href="{{ route('showLoginForm') }}">

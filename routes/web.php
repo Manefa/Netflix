@@ -53,10 +53,10 @@ Route::get('/films/{film}/', [FilmsController::class, 'show'])->name('films.show
 /*Authentification*/
 
 Route::get('/login', [UsagersController::class, 'index'])->name('showLoginForm');
-Route::post('/login', [UsagersController::class])->name('login');
+
+Route::post('/login', [UsagersController::class, 'login'])->name('user.login');
+
 Route::post('/logout', [UsagersController::class, 'show'])->name('logout');
-
-
 
 
 // Mettre liens avec variables en dernier.

@@ -11,13 +11,13 @@
                         <div class="sign-in-page-data">
                             <div class="sign-in-from w-100 m-auto">
                                 <h3 class="mb-3 text-center">Sign in</h3>
-                                <form class="mt-4" action="index.html">
+                                <form class="mt-4" method="post" action="{{route('user.login')}}">
                                     <div class="form-group">
-                                        <input type="email" class="form-control mb-0" id="exampleInputEmail1"
+                                        <input type="email" name="email" class="form-control mb-0" id="exampleInputEmail1"
                                             placeholder="Enter email" autocomplete="off" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control mb-0" id="exampleInputPassword2"
+                                        <input type="password" name="password" class="form-control mb-0" id="exampleInputPassword2"
                                             placeholder="Password" required>
                                     </div>
 
