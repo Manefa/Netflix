@@ -15,22 +15,62 @@
 
 <body style="background-color: black;">
     @extends('layouts.app')
-    <div style="background-image: url({{ $film->couverture_url }}); background-size: cover; height: 100vh; "
-        class="jumbotron">
-        <div>
-            <h1 class="text-light" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">{{ $film->titre }}</h1>
-            <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">{{ $film->resume }}</p>
-            <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);">Durée : {{ $film->duree }}</p>
-            <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);"> Année de Production:
-                {{ $film->annee_de_production }}</p>
+    <div>
+
+
+        <div class="zoomed-iframe-container">
+            <iframe class="zoomed-iframe" src="{{ $film->lienfilm }}&autoplay=1&controls=0" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+            <div class="video-info">
+                <h1 class="text-light" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); font-size:8em;">
+                    {{ $film->titre }}</h1>
+                <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); font-size:1.5em;">
+                    {{ $film->resume }}</p>
+                <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); font-size:1.5em;">Durée :
+                    {{ $film->duree }}
+                </p>
+                <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);font-size:1.5em;">Année de
+                    Production:
+                    {{ $film->annee_de_production }}</p>
+            </div>
         </div>
+        <style>
+            .zoomed-iframe-container {
+                overflow: hidden;
+                position: relative;
+                width: 100%;
+                height: 100vh;
+            }
+
+            .zoomed-iframe {
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                border: none;
+            }
+
+            .video-info {
+                position: absolute;
+                top: 25%;
+                left: 20px;
+                z-index: 1;
+            }
+        </style>
+
+
+
     </div>
 
 
-    <div class="container ">
+    <div class="container">
 
 
-        <div class="row">
+        <div class="row d-flex justify-content-start">
             <div class="col-md-6">
                 <!-- Petite image du film avec icône Play -->
                 <div class="film-image">
@@ -39,25 +79,21 @@
                         <i class="fas fa-play-circle play-icon"></i>
                     </a>
                 </div>
-                
+
             </div>
 
             <div class="col-md-6">
-                <iframe width="560" height="315" src={{ $film->lienfilm }} title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
 
-                    <!-- Genres -->
+                <!-- Genres -->
                 <div class="film-details text-light">
                     <h3>Genres</h3>
-                        @if (count($film->genres))
-                            @foreach ($film->genres as $genre)
-                                <h6>{{ $genre->titre }}</h6>
-                            @endforeach
-                        @else
-                            <p>Il ny a aucun acteur.</p>
-                        @endif
+                    @if (count($film->genres))
+                        @foreach ($film->genres as $genre)
+                            <h6>{{ $genre->titre }}</h6>
+                        @endforeach
+                    @else
+                        <p>Il ny a aucun acteur.</p>
+                    @endif
                 </div>
 
                 <!-- Équipe du film -->
@@ -111,24 +147,9 @@
             </div>
 
         </div>
+
     </div>
 
-    <!-- Modal pour la vidéo du trailer -->
-    <div class="modal fade" id="trailerModal" tabindex="-1" role="dialog" aria-labelledby="trailerModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <video controls>
-                        <source src="lien_vers_trailer.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la vidéo.
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
-
-</html>
 
 </html>

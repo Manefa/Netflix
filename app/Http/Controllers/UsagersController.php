@@ -79,9 +79,8 @@ class UsagersController extends Controller
 
     public function logout(Request $request)
     {
-        Session::flush();
         Auth::logout();
-        return redirect()->route('logout')->with('message', "Bye!");
+        return redirect()->route('login')->with('message', "Bye!");
         
     }
 }

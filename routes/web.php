@@ -23,15 +23,15 @@ use App\HTTP\Controllers\UsagersController;
     return view('welcome');
 });*/
 
-Route::get('/', [NetflixsController::class, 'index'])->name('netflix');
+Route::get('/', [NetflixsController::class, 'index'])->name('netflix')->middleware('auth');
 
-Route::get('netflixs', [NetflixsController::class, 'index'])->name('netflix');
+Route::get('netflixs', [NetflixsController::class, 'index'])->name('netflix')->middleware('auth');
 
 Route::get('/films/creation', [FilmsController::class, 'create'])->name('films.create')->middleware('auth');
 
-Route::post('/films', [FilmsController::class, 'store'])->name('films.store');
+Route::post('/films', [FilmsController::class, 'store'])->name('films.store')->middleware('auth');
 
-Route::get('/personnes/liste', [PersonnesController::class, 'index'])->name('personnes.liste')->middleware('CheckRole:admin');
+Route::get('/personnes/liste', [PersonnesController::class, 'index'])->name('personnes.liste')->middleware('auth');
 
 Route::get('/personnes/creation', [PersonnesController::class, 'create'])->name('personnes.create')->middleware('auth');
 
@@ -56,7 +56,7 @@ Route::get('/login', [UsagersController::class, 'index'])->name('showLoginForm')
 
 Route::post('/login', [UsagersController::class, 'login'])->name('login');
 
-Route::post('/logout', [UsagersController::class, 'logout'])->name('logout');
+Route::post('/logout', [UsagersController::class, 'logout'])->name('logout')->middleware('auth');
 
 
 // Mettre liens avec variables en dernier.
