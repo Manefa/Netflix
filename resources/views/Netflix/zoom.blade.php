@@ -26,15 +26,18 @@
             </iframe>
             <div class="video-info">
                 <h1 class="text-light" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); font-size:8em;">
-                    {{ $film->titre }}</h1>
+                    {{ $film->titre }}
+                </h1>
                 <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); font-size:1.5em;">
-                    {{ $film->resume }}</p>
+                    {{ $film->resume }}
+                </p>
                 <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); font-size:1.5em;">Durée :
                     {{ $film->duree }}
                 </p>
                 <p class="text-light" style="text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);font-size:1.5em;">Année de
                     Production:
-                    {{ $film->annee_de_production }}</p>
+                    {{ $film->annee_de_production }}
+                </p>
             </div>
         </div>
         <style>
@@ -67,7 +70,7 @@
     </div>
 
 
-    <div class="container">
+    <div class="container-fluid">
 
 
         <div class="row d-flex justify-content-start">
@@ -83,7 +86,6 @@
             </div>
 
             <div class="col-md-6">
-
                 <!-- Genres -->
                 <div class="film-details text-light">
                     <h3>Genres</h3>
@@ -92,62 +94,49 @@
                             <h6>{{ $genre->titre }}</h6>
                         @endforeach
                     @else
-                        <p>Il ny a aucun acteur.</p>
+                        <p>Il ny a aucun genre.</p>
                     @endif
                 </div>
-
-                <!-- Équipe du film -->
-                <div class="film-details text-light">
-                    <h3>Équipe du Film</h3>
-
-                    <div class="row mb-3">
-                        <div class="col-md-4">
-                            <p>Réalisateur</p>
-                        </div>
-                        <div class="col-md-4">
-                            <img src={{ $film->realisateur->photo }} alt="Réalisateur" class="img-fluid">
-
-                        </div>
-
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-md-4">
-                            <p>Producteur</p>
-                        </div>
-
-                        <div class="col-md-4">
-                            <img src={{ $film->producteur->photo }} alt="Producteur" class="img-fluid">
-
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-
-                        <div class="col-md-4">
-                            <p>Acteur</p>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="row">
-                                @if (count($film->acteurs))
-                                    @foreach ($film->acteurs as $acteur)
-                                        <div class="col-md-4">
-                                            <img src={{ $acteur->photo }} alt="Acteur" class="img-fluid">
-                                        </div>
-                                    @endforeach
-                                @else
-                                    <p>Il ny a aucun acteur.</p>
-                                @endif
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-
         </div>
+    </div>
 
+    </div>
+
+    <div class="row">
+        Acteurs
+    </div>
+
+    <div class="row">
+        @if (count($film->acteurs))
+            @foreach ($film->acteurs as $acteur)
+                <div class="col-md-2">
+                    <img src={{ $acteur->photo }} alt="Acteur" class="img-fluid">
+                </div>
+            @endforeach
+        @else
+            <p>Il ny a aucun acteur.</p>
+        @endif
+
+    </div>
+
+    <div class="row">
+        Producteurs
+    </div>
+
+    <div class="col-md-2">
+        <img src={{ $film->producteur->photo }} alt="Producteur" class="img-fluid">
+
+    </div>
+
+    <div class="row">
+        Realisateurs
+    </div>
+
+    <div class="col-md-2">
+        <img src={{ $film->realisateur->photo }} alt="Réalisateur" class="img-fluid">
+
+    </div>
     </div>
 
 </body>
