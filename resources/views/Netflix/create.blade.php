@@ -23,8 +23,6 @@
 
                         <label for="realisateurInput">
                             Réalisateur du film
-                        </label>
-                        <label>
                             <input mbsc-input id="realisateurInput" data-dropdown="true" />
                         </label>
                         <select name="realisateur_id" id="single-select1">
@@ -35,8 +33,6 @@
                        
                         <label for="producteurInput">
                             Producteur du film
-                        </label>
-                        <label>
                             <input mbsc-input id="producteurInput" data-dropdown="true" />
                         </label>
                         <select name="producteur_id" id="single-select2">

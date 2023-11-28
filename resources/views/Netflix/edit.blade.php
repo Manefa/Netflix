@@ -30,7 +30,7 @@
                     @method('PATCH')
                     <div class="form-group">
                         <label for="titreFilm">Titre du film</label>
-                        <input type="text" class="form-control" id="titreFilm" placeholder="Titre" name="titre" value="{{ old('titre', $film->nom) }}">
+                        <input type="text" class="form-control" id="titreFilm" placeholder="Titre" name="titre" value="{{ old('titre', $film->titre) }}">
                         <label for="resumeFilm">Résume du film</label>
                         <input type="text" class="form-control" id="resumeFilm" placeholder="Résume" name="resume">
                         <label for="dureeFilm">Durée du film</label>
@@ -39,23 +39,24 @@
                         <input type="text" class="form-control" id="anneeFilm" placeholder="Année" name="annee_de_production">
                         <label for="brandFilm">Brand</label>
                         <input type="text" class="form-control" id="brandFilm" placeholder="Brand" name="brand">
-                        <label>
+                        <label for="realisateurInput">
                             Réalisateur du film
-                            <input mbsc-input id="realisateurInput" data-dropdown="true"/>
+                            <input mbsc-input id="realisateurInput" data-dropdown="true" />
                         </label>
                         <select name="realisateur_id" id="single-select1">
-                        @foreach($films as $film)
-                            <option value="{{$film->realisateur_id}}">{{$film->realisateur->nom}}</option>
-                        @endforeach
+                            @foreach ($personnes as $personne)
+                                <option value="{{ $personne->id }}">{{ $personne->nom }}</option>
+                            @endforeach
                         </select>
-                        <label>
+                       
+                        <label for="producteurInput">
                             Producteur du film
-                            <input mbsc-input id="producteurInput" data-dropdown="true"/>
+                            <input mbsc-input id="producteurInput" data-dropdown="true" />
                         </label>
                         <select name="producteur_id" id="single-select2">
-                        @foreach($films as $film)
-                            <option value="{{$film->producteur_id}}">{{$film->producteur->nom}}</option>
-                        @endforeach
+                            @foreach ($personnes as $personne)
+                                <option value="{{ $personne->id }}">{{ $personne->nom }}</option>
+                            @endforeach
                         </select>
                         <label for="lienFilm">Lien du film</label>
                         <input type="url" class="form-control" id="lienFilm" placeholder="Lien" name="lienfilm">
