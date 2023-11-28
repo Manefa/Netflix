@@ -40,6 +40,7 @@ class FilmsController extends Controller
         return View('Netflix.create', compact('films','genres', 'personnes', 'langues', 'sous_titres'));
     }
 
+    
 
     public function store(FilmRequest $request) {
         try {

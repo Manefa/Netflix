@@ -26,6 +26,8 @@ Route::get('netflixs', [NetflixsController::class, 'index'])->name('netflix');
 
 Route::get('/films/creation', [FilmsController::class, 'create'])->name('films.create');
 
+Route::get('/films/modification', [FilmsController::class, 'edit'])->name('films.edit');
+
 Route::post('/films', [FilmsController::class, 'store'])->name('films.store');
 
 Route::get('/netflixs/{film}/', [FilmsController::class, 'zoom'])->name('netflixs.zoom');
