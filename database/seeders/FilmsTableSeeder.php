@@ -27,7 +27,6 @@ class FilmsTableSeeder extends Seeder
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_.jpg',
                 'cote' => 70,
                 'notation' => '18 ans et plus',
-                'genre_id' => 1, // ID du genre
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -44,7 +43,6 @@ class FilmsTableSeeder extends Seeder
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg',
                 'cote' => 50,
                 'notation' => '14 ans et plus',
-                'genre_id' => 2, // ID du genre
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -61,7 +59,6 @@ class FilmsTableSeeder extends Seeder
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_.jpg',
                 'cote' => 40,
                 'notation' => '14 ans et plus',
-                'genre_id' => 3, // ID du genre
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -78,7 +75,6 @@ class FilmsTableSeeder extends Seeder
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg',
                 'cote' => 90,
                 'notation' => '18 ans et plus',
-                'genre_id' => 4, // ID du genre
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -95,7 +91,6 @@ class FilmsTableSeeder extends Seeder
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg',
                 'cote' => 70,
                 'notation' => '15 ans et plus',
-                'genre_id' => 5, // ID du genre
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -112,7 +107,6 @@ class FilmsTableSeeder extends Seeder
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_FMjpg_UX1000_.jpg',
                 'cote' => 70,
                 'notation' => '16 ans et plus',
-                'genre_id' => 1, // ID du genre
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -129,7 +123,6 @@ class FilmsTableSeeder extends Seeder
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg',
                 'cote' => 80,
                 'notation' => '12 ans et plus',
-                'genre_id' => 6, // ID du genre
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -146,7 +139,6 @@ class FilmsTableSeeder extends Seeder
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BODQ0OWJiMzktYjNlYi00MzcwLThlZWMtMzRkYTY4ZDgxNzgxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg',
                 'cote' => 90,
                 'notation' => '11 ans et plus',
-                'genre_id' => 4, // ID du genre
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -163,7 +155,6 @@ class FilmsTableSeeder extends Seeder
                 'pochette_url' => 'https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg',
                 'cote' => 80,
                 'notation' => '14 ans et plus',
-                'genre_id' => 3, // ID du genre
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -180,7 +171,6 @@ class FilmsTableSeeder extends Seeder
                 'pochette_url' => 'https://fr.web.img6.acsta.net/pictures/23/08/23/17/06/5557233.jpg',
                 'cote' => 80,
                 'notation' => '14 ans et plus',
-                'genre_id' => 6, // ID du genre
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

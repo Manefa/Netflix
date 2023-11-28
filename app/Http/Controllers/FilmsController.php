@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use App\Models\Film;
 use App\Models\Personne;
 use App\Models\Genre;
+use App\Models\Langue;
+use App\Models\Sous_titre;
 use Faker\Provider\ar_EG\Person;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -31,33 +33,30 @@ class FilmsController extends Controller
 
     public function create() {
         $films = Film::all();
-        $genres = Genre::orderBy('titre')->get();
+        $genres = Genre::all();
         $personnes = Personne::all();
-        return View('Netflix.create', compact('films','genres', 'personnes'));
+        $langues = Langue::all();
+        $sous_titres = Sous_titre::all();
+        return View('Netflix.create', compact('films','genres', 'personnes', 'langues', 'sous_titres'));
     }
 
+    
 
     public function store(FilmRequest $request) {
         try {
             $film = new Film($request->all());
             //dd($film);
+            //dd($request);
             $film->save();
+            $film->genres()->attach($request->input('genre_id'), ['created_at' => now(), 'updated_at' => now()]);
+            $film->acteurs()->attach($request->input('personne_id'), ['created_at' => now(), 'updated_at' => now()]);
+            $film->langues()->attach($request->input('langue_id'), ['created_at' => now(), 'updated_at' => now()]);
+            $film->sous_titres()->attach($request->input('sous_titre_id'), ['created_at' => now(), 'updated_at' => now()]);
         }
         catch(\Throwable $e) {
             Log::debug($e);
         }
         return redirect()->route('netflix');
-    }
-
-    public function storeFilmPersonne(Request $request) {
-        try {
-            $film = Film::find($request->film_id);
-            $personne = Personne::find($request->personne_id);
-
-        }
-        catch(\Throwable $e) {
-            Log::debug($e);
-        }
     }
 
 }
