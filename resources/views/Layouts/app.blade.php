@@ -19,7 +19,7 @@
     <!-- Actor CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/actor.css') }}">
 
-    <link href="{{asset('mobiscroll/css/mobiscroll.javascript.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('mobiscroll/css/mobiscroll.javascript.min.css')}}" rel="stylesheet" /> 
     
     <script src="{{asset('mobiscroll/js/mobiscroll.javascript.min.js')}}"></script>
 
@@ -227,5 +227,4 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 </body>
-
 </html>

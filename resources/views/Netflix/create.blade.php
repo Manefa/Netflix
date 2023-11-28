@@ -133,4 +133,4 @@ mobiscroll.select('#single-select2', {
 });
 
 </script>
-</html>
+@endsection
