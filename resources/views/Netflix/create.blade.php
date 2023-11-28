@@ -70,7 +70,7 @@
                             Genre du film
                             <input mbsc-input id="genreInput" data-dropdown="true" data-tags="true"/>
                         </label>
-                        <select name="genre_id" id="multiple-select" multiple>
+                        <select name="genre_id[]" id="multiple-select" multiple>
                         @foreach($genres as $genre)
                             <option value="{{$genre->id}}">{{$genre->titre}}</option>
                         @endforeach
