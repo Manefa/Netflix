@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom', 100);
             $table->date('date_naissance');
+            $table->string('sexe');
             $table->string('photo', 255);
             $table->string('role_principal', 255);
             $table->string('biographie', 2000);
