@@ -9,7 +9,7 @@ class Film extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titre', 'resume', 'duree', 'annee_de_production', 'brand', 'realisateur_id', 'producteur_id', 'lienfilm', 'couverture_url', 'pochette_url', 'cote', 'notation', 'genre_id'];
+    protected $fillable = ['titre', 'resume', 'duree', 'annee_de_production', 'brand', 'realisateur_id', 'producteur_id', 'lienfilm', 'couverture_url', 'pochette_url', 'cote', 'notation'];
 
     public function realisateur(){
         return $this->belongsTo(Personne::class);
@@ -29,5 +29,9 @@ class Film extends Model
 
     public function langues(){
         return $this->belongsToMany(Langue::class);
+    }
+
+    public function sous_titres(){
+        return $this->belongsToMany(Sous_titre::class);
     }
 }

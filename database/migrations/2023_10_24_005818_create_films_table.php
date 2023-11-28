@@ -25,7 +25,6 @@ return new class extends Migration
             $table->string('pochette_url', 255);
             $table->integer('cote');
             $table->string('notation');
-            $table->foreignId('genre_id')->constrained();
             $table->timestamps();
 
             // Définir les clés étrangères

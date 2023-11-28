@@ -93,6 +93,15 @@
                             <option value="{{$langue->id}}">{{$langue->code}}</option>
                         @endforeach
                         </select>
+                        <label>
+                            Sous titres du film
+                            <input mbsc-input id="soustitreInput" data-dropdown="true" data-tags="true" />
+                        </label>
+                        <select name="sous_titre_id[]" id="multiple-select4" multiple>
+                        @foreach($sous_titres as $sous_titre)
+                            <option value="{{$sous_titre->id}}">{{$sous_titre->code}}</option>
+                        @endforeach
+                        </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </form>
@@ -115,6 +124,12 @@ mobiscroll.select('#multiple-select2', {
 
 mobiscroll.select('#multiple-select3', {
     inputElement: document.getElementById('langueInput'),
+    touchUi: false,
+    defaultValue: '1'
+});
+
+mobiscroll.select('#multiple-select4', {
+    inputElement: document.getElementById('soustitreInput'),
     touchUi: false,
     defaultValue: '1'
 });
