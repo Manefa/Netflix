@@ -20,14 +20,16 @@
                             name="annee_de_production">
                         <label for="brandFilm">Brand</label>
                         <input type="text" class="form-control" id="brandFilm" placeholder="Brand" name="brand">
-                        <label for="realisateurInput">Réalisateur du film</label>
+
+                        <label for="realisateurInput">
+                            Réalisateur du film
+                        </label>
                         <label>
-                            
                             <input mbsc-input id="realisateurInput" data-dropdown="true" />
                         </label>
                         <select name="realisateur_id" id="single-select1">
-                            @foreach ($films as $film)
-                                <option value="{{ $film->realisateur_id }}">{{ $film->realisateur->nom }}</option>
+                            @foreach ($personnes as $personne)
+                                <option value="{{ $personne->id }}">{{ $personne->nom }}</option>
                             @endforeach
                         </select>
                        
@@ -38,8 +40,8 @@
                             <input mbsc-input id="producteurInput" data-dropdown="true" />
                         </label>
                         <select name="producteur_id" id="single-select2">
-                            @foreach ($films as $film)
-                                <option value="{{ $film->producteur_id }}">{{ $film->producteur->nom }}</option>
+                            @foreach ($personnes as $personne)
+                                <option value="{{ $personne->id }}">{{ $personne->nom }}</option>
                             @endforeach
                         </select>
                         <label for="lienFilm">Lien du film</label>

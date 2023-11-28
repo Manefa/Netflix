@@ -27,9 +27,10 @@
             <div class="col-xl-12">
                 <form method="post" action="{{route('films.store')}}">
                     @csrf
+                    @method('PATCH')
                     <div class="form-group">
                         <label for="titreFilm">Titre du film</label>
-                        <input type="text" class="form-control" id="titreFilm" placeholder="Titre" name="titre">
+                        <input type="text" class="form-control" id="titreFilm" placeholder="Titre" name="titre" value="{{ old('titre', $film->nom) }}">
                         <label for="resumeFilm">Résume du film</label>
                         <input type="text" class="form-control" id="resumeFilm" placeholder="Résume" name="resume">
                         <label for="dureeFilm">Durée du film</label>

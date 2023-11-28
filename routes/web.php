@@ -23,25 +23,37 @@ use App\HTTP\Controllers\UsagersController;
     return view('welcome');
 });*/
 
+//Index
 Route::get('/', [NetflixsController::class, 'index'])->name('netflix')->middleware('auth');
 
 Route::get('netflixs', [NetflixsController::class, 'index'])->name('netflix')->middleware('auth');
 
+//Création films
 Route::get('/films/creation', [FilmsController::class, 'create'])->name('films.create')->middleware('auth');
 
 Route::post('/films', [FilmsController::class, 'store'])->name('films.store')->middleware('auth');
 
+//Afficher liste personne
 Route::get('/personnes/liste', [PersonnesController::class, 'index'])->name('personnes.liste')->middleware('auth');
 
+//Création personnes
 Route::get('/personnes/creation', [PersonnesController::class, 'create'])->name('personnes.create')->middleware('auth');
 
 Route::post('/personnes',  [PersonnesController::class, 'store'])->name('personnes.store')->middleware('auth');
 
+//Modification personnes
 Route::get('/personnes/{personne}/modifier/', 
 [PersonnesController::class, 'edit'])->name('personnes.edit')->middleware('auth');
 
 Route::patch('/personnes/{personne}/modifier', 
 [PersonnesController::class, 'update'])->name('personnes.update')->middleware('auth');
+
+//Modification films
+Route::get('/films/{film}/modifier', 
+[FilmsController::class, 'edit'])->name('films.edit')->middleware('auth');
+
+Route::patch('/films/{film}/modifier', 
+[FilmsController::class, 'update'])->name('films.update')->middleware('auth');
 
 
 Route::get('/netflixs/{film}/', [FilmsController::class, 'zoom'])->name('netflixs.zoom')->middleware('auth');
