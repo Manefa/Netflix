@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\PersonneAdd;
 use App\Http\Requests\PersonneRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use App\Models\Personne;
 
@@ -97,4 +98,5 @@ class PersonnesController extends Controller
     {
         //
     }
+
 }
