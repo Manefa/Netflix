@@ -72,9 +72,9 @@
                             Genre du film
                             <input mbsc-input id="genreInput" data-dropdown="true" data-tags="true"/>
                         </label>
-                        <select name="genre_id[]" id="multiple-select" multiple>
+                        <select name="genre_id[]" id="multiple-select" multiple> <?php // {{ $film->genre.contains($genre->id) ? 'selected' : null }}?>
                         @foreach($genres as $genre) 
-                            <option value="{{$genre->id}}">{{$genre->titre}}</option>
+                            <option value="{{$genre->id}}" {{ in_array('$genre->id', old('$genre->id', [])) ? 'selected' : '' }}>{{$genre->titre}}</option>
                         @endforeach
                         </select>
                         <label>
