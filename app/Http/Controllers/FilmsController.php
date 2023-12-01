@@ -74,6 +74,24 @@ class FilmsController extends Controller
             $film->langues()->detach();
             $film->sous_titres()->detach();
             
+            $film->titre = $request->titre;
+            $film->resume = $request->resume;
+            $film->duree = $request->duree;
+            $film->annee_de_production = $request->annee_de_production;
+            $film->brand = $request->brand;
+            $film->realisateur_id = $request->realisateur_id;
+            $film->producteur_id= $request->producteur_id;
+            $film->lienfilm= $request->lienfilm;
+            $film->couverture_url= $request->couverture_url;
+            $film->pochette_url= $request->pochette_url;
+            $film->cote= $request->cote;
+            $film->notation= $request->notation;
+
+            $film->save();
+            $film->genres()->attach($request->input('genre_id'), ['created_at' => now(), 'updated_at' => now()]);
+            $film->acteurs()->attach($request->input('personne_id'), ['created_at' => now(), 'updated_at' => now()]);
+            $film->langues()->attach($request->input('langue_id'), ['created_at' => now(), 'updated_at' => now()]);
+            $film->sous_titres()->attach($request->input('sous_titre_id'), ['created_at' => now(), 'updated_at' => now()]);
         }
         catch(\Throwable $e) {
             Log::debug($e);

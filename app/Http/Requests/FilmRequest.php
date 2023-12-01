@@ -34,7 +34,6 @@ class FilmRequest extends FormRequest
             'pochette_url' => 'required|active_url|min:2|max:100',
             'cote' => 'required|integer|between:0,100',
             'notation' => 'required|string|min:2|max:50',
-            'genre_id' => 'required'
         ];
     }
 
