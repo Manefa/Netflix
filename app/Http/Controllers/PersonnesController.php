@@ -17,9 +17,27 @@ class PersonnesController extends Controller
      */
     public function index()
     {
-        $personnes = Personne::all();
-        return View('Personne.liste', compact('personnes'));
+        $champ = request('champ');
+        $valeur = request('valeur'); // Ajoutez cette ligne pour récupérer la valeur
+
+        // Filtrer et trier en fonction du champ
+        $personnes = Personne::when($champ == 'sexe' && $valeur == 'homme', function ($query) {
+            return $query->where('sexe', 'M')->orderBy('date_naissance', 'asc');
+        })
+            ->when($champ == 'sexe' && $valeur == 'femme', function ($query) {
+                return $query->where('sexe', 'F')->orderBy('date_naissance', 'asc');
+            })
+            ->when($champ == 'age', function ($query) {
+                return $query->orderBy('date_naissance', 'desc');
+            })
+            ->when($champ == 'rafraichir', function ($query) {
+                // Ne pas appliquer de filtre ni de tri
+            })
+            ->get();
+
+        return view('Personne.liste', compact('personnes'));
     }
+
 
     /**
      * Show the form for creating a new resource.

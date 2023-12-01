@@ -7,34 +7,34 @@
     <div class="container-fluid" style="margin-top: 100px;">
         <div class="row">
             <div class="col-md-1">
-                <button type="button" class="">Homme</button>
+                <form action="{{ route('personnes.liste') }}" method="get">
+                    <button type="submit" name="champ" value="sexe">Homme</button>
+                    <input type="hidden" name="valeur" value="homme"> <!-- Ajoutez ceci pour transmettre la valeur -->
+                </form>
             </div>
-
+            
             <div class="col-md-1">
-                <button type="button" class="">Femme</button>
+                <form action="{{ route('personnes.liste') }}" method="get">
+                    <button type="submit" name="champ" value="sexe">Femme</button>
+                    <input type="hidden" name="valeur" value="femme">
+                </form>
             </div>
-
+            
             <div class="col-md-1">
-                <button type="button" class="">Par age</button>
+                <form action="{{ route('personnes.liste') }}" method="get">
+                    <button type="submit" name="champ" value="age">Par âge</button>
+                </form>
             </div>
-
+            
             <div class="col-md-1">
-                <button type="button" class="">Rafraichir</button>
+                <form action="{{ route('personnes.liste') }}" method="get">
+                    <button type="submit" name="champ" value="rafraichir">Rafraichir</button>
+                </form>
             </div>
-
+            
         </div>
+
         <div class="row">
-            <?php
-            
-            $manPersonnesArray = Arr::where($personnes, function ($value, $key) use ($type) {
-                return $value['sexe'] == 'M';
-            });
-            
-            $womenPersonnesArray = Arr::where($personnes, function ($value, $key) use ($type) {
-                return $value['sexe'] == 'F';
-            })
-            
-            ?>
             @if (count($personnes))
                 @foreach ($personnes as $personne)
                     <div class="col-md-2 mt-2 img-container">
