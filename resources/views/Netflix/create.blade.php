@@ -8,6 +8,13 @@
             <div class="col-xl-12">
                 <form method="post" action="{{ route('films.store') }}">
                     @csrf
+                    @if(isset($errors) && $errors->any())
+                    <div>
+                        @foreach($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                    @endif
                     <div class="form-group">
                         <label for="titreFilm">Titre du film</label>
                         <input type="text" class="form-control" id="titreFilm" placeholder="Titre" name="titre">

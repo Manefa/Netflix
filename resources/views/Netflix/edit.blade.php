@@ -9,11 +9,13 @@
                 <form method="post" action="{{ route('films.update', [$film]) }}">
                     @csrf
                     @method('PATCH')
+                    @if(isset($errors) && $errors->any())
                     <div>
-                        @foreach
-                            
+                        @foreach($errors->all() as $error)
+                            <p>{{ $error }}</p>
                         @endforeach
                     </div>
+                    @endif
                     <div class="form-group">
                         <label for="titreFilm">Titre du film</label>
                         <input type="text" class="form-control" id="titreFilm" placeholder="Titre" name="titre" value="{{ old('titre', $film->titre) }}">

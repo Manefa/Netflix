@@ -67,7 +67,7 @@ class FilmsController extends Controller
         return View('Netflix.edit', compact('film', 'genres', 'personnes', 'langues', 'sous_titres'));
     }
 
-    public function update(Request $request, Film $film) {
+    public function update(FilmRequest $request, Film $film) {
         try {
             $film->genres()->detach();
             $film->acteurs()->detach();

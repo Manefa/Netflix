@@ -23,15 +23,15 @@ class FilmRequest extends FormRequest
     {
         return [
             'titre' => 'required|string|min:2|max:50',
-            'resume' => 'required|string|min:2|max:50',
+            'resume' => 'required|string|min:2|max:300',
             'duree' => 'required|string|size:5',
             'annee_de_production' => 'required|integer|digits:4',
             'brand' => 'required|string|min:2|max:50',
             'realisateur_id' => 'required',
             'producteur_id' => 'required',
-            'lienfilm' => 'required|active_url|min:2|max:100',
-            'couverture_url' => 'required|active_url|min:2|max:100',
-            'pochette_url' => 'required|active_url|min:2|max:100',
+            'lienfilm' => 'required|active_url|min:2|max:200',
+            'couverture_url' => 'required|active_url|min:2|max:200',
+            'pochette_url' => 'required|active_url|min:2|max:200',
             'cote' => 'required|integer|between:0,100',
             'notation' => 'required|string|min:2|max:50',
         ];
