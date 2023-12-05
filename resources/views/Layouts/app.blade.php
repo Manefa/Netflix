@@ -41,16 +41,16 @@
     <!-- FAVICONS -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('media/images/netflix_icon.png') }}">
     <link rel="shortcut icon" sizes="16x16" href="{{ asset('media/favicon/favicon-16x16.png') }}">
-    <link rel="shortcut icon" sizes="32x32" href="media/favicon/favicon-32x32.png">
-    <link rel="apple-touch-icon icon" sizes="76x76" href="media/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon icon" sizes="120x120" href="media/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon icon" sizes="152x152" href="media/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon icon" sizes="180x180" href="media/favicon/apple-icon-180x180.png">
+    <link rel="shortcut icon" sizes="32x32" href="{{ asset('media/favicon/favicon-32x32.png') }}">
+    <link rel="apple-touch-icon icon" sizes="76x76" href="{{ asset('media/favicon/apple-icon-76x76.png') }}">
+    <link rel="apple-touch-icon icon" sizes="120x120" href="{{ asset('media/favicon/apple-icon-120x120.png') }}">
+    <link rel="apple-touch-icon icon" sizes="152x152" href="{{ asset('media/favicon/apple-icon-152x152.png') }}">
+    <link rel="apple-touch-icon icon" sizes="180x180" href="{{ asset('media/favicon/apple-icon-180x180.png') }}">
 
     <!-- Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#141414">
-    <title>Navbar</title>
+    <title>@yield('title')</title>
 </head>
 
 <body>
