@@ -67,7 +67,7 @@ class FilmsController extends Controller
         return View('Netflix.edit', compact('film', 'genres', 'personnes', 'langues', 'sous_titres'));
     }
 
-    public function update(FilmRequest $request, Film $film) {
+    public function update(Request $request, Film $film) {
         try {
             $film->genres()->detach();
             $film->acteurs()->detach();
@@ -92,6 +92,24 @@ class FilmsController extends Controller
             $film->acteurs()->attach($request->input('personne_id'), ['created_at' => now(), 'updated_at' => now()]);
             $film->langues()->attach($request->input('langue_id'), ['created_at' => now(), 'updated_at' => now()]);
             $film->sous_titres()->attach($request->input('sous_titre_id'), ['created_at' => now(), 'updated_at' => now()]);
+        }
+        catch(\Throwable $e) {
+            Log::debug($e);
+        }
+        return redirect()->route('netflix');
+    }
+
+    public function destroy($id) {
+        try {
+            $film = Film::findOrFail($id);
+
+            $film->genres()->detach();
+            $film->acteurs()->detach();
+            $film->langues()->detach();
+            $film->sous_titres()->detach();
+            
+            $film->delete();
+            
         }
         catch(\Throwable $e) {
             Log::debug($e);

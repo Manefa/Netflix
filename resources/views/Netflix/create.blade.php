@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Zoom Film')
+@section('title', 'Ajouter Film')
 
 @section('contenu')
     <div class="container-fluid w-50" style="margin-top: 100px;">

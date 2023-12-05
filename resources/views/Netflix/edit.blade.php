@@ -1,33 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap 4.4.1 -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
-    <!-- Flickity 2.2.1 -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/flickity.css')}}">
-    <!-- JQuery UI -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/jquery-ui.css')}}">
-    <!-- Main CSS -->
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-
-
-    <link href="{{asset('mobiscroll/css/mobiscroll.javascript.min.css')}}" rel="stylesheet" />
-    <script src="{{asset('mobiscroll/js/mobiscroll.javascript.min.js')}}"></script>
-    <title>Formulaire - Ajout de film</title>
-</head>
-
-<body>
     @extends('layouts.app')
+
+    @section('title', 'Modifier Film')
+
+    @section('contenu')
     <div class="container-fluid w-50" style="margin-top: 100px;">
         <div class="row">
             <div class="col-xl-12">
                 <form method="post" action="{{ route('films.update', [$film]) }}">
                     @csrf
                     @method('PATCH')
+                    <div>
+                        @foreach
+                            
+                        @endforeach
+                    </div>
                     <div class="form-group">
                         <label for="titreFilm">Titre du film</label>
                         <input type="text" class="form-control" id="titreFilm" placeholder="Titre" name="titre" value="{{ old('titre', $film->titre) }}">
@@ -72,9 +58,9 @@
                             Genre du film
                             <input mbsc-input id="genreInput" data-dropdown="true" data-tags="true"/>
                         </label>
-                        <select name="genre_id[]" id="multiple-select" multiple> <?php // {{ $film->genre.contains($genre->id) ? 'selected' : null }}?>
+                        <select name="genre_id[]" id="multiple-select" multiple>
                         @foreach($genres as $genre) 
-                            <option value="{{$genre->id}}" {{ in_array('$genre->id', old('$genre->id', [])) ? 'selected' : '' }}>{{$genre->titre}}</option>
+                            <option value="{{$genre->id}}"{{ $film->genres->contains('id', $genre->id) ? 'selected' : null }}>{{$genre->titre}}</option>
                         @endforeach
                         </select>
                         <label>
@@ -83,7 +69,7 @@
                         </label>
                         <select name="personne_id[]" id="multiple-select2" multiple>
                         @foreach($personnes as $personne)
-                            <option value="{{$personne->id}}">{{$personne->nom}}</option>
+                            <option value="{{$personne->id}}" {{ $film->acteurs->contains('id', $personne->id) ? 'selected' : null }}>{{$personne->nom}}</option>
                         @endforeach
                         </select>
                         <label>
@@ -92,7 +78,7 @@
                         </label>
                         <select name="langue_id[]" id="multiple-select3" multiple>
                         @foreach($langues as $langue)
-                            <option value="{{$langue->id}}">{{$langue->code}}</option>
+                            <option value="{{$langue->id}}" {{ $film->langues->contains('id', $langue->id) ? 'selected' : null }}>{{$langue->code}}</option>
                         @endforeach
                         </select>
                         <label>
@@ -101,11 +87,16 @@
                         </label>
                         <select name="sous_titre_id[]" id="multiple-select4" multiple>
                         @foreach($sous_titres as $sous_titre)
-                            <option value="{{$sous_titre->id}}">{{$sous_titre->code}}</option>
+                            <option value="{{$sous_titre->id}}" {{ $film->sous_titres->contains('id', $sous_titre->id) ? 'selected' : null }}>{{$sous_titre->code}}</option>
                         @endforeach
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </form>
+                <form method="POST" action="{{ route('films.destroy', [$film->id]) }}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-primary mt-3">Supprimer</button>
                 </form>
             </div>
         </div>
@@ -147,4 +138,4 @@ mobiscroll.select('#single-select2', {
 });
 
 </script>
-</html>
+@endsection

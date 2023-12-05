@@ -55,6 +55,9 @@ Route::get('/films/{film}/modifier',
 Route::patch('/films/{film}/modifier', 
 [FilmsController::class, 'update'])->name('films.update')->middleware('auth');
 
+//Suppression de films
+Route::delete('/films/{film}/supprimer', 
+[FilmsController::class, 'destroy'])->name('films.destroy')->middleware('auth');
 
 Route::get('/netflixs/{film}/', [FilmsController::class, 'zoom'])->name('netflixs.zoom')->middleware('auth');
 

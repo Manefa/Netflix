@@ -41,7 +41,8 @@ class FilmRequest extends FormRequest
         return [
             'titre.min' => 'Le titre doit au minimum avoir 2 caractères.',
             'resume.min' => 'Le resume doit au minimum avoir 2 caractères.',
-            //...
+            'duree.size' => 'La durée doit être sous ce format: 2h30m'
+            
         ];
     }
 }
