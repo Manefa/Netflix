@@ -423,16 +423,5 @@
             </div>
         </div>
     @endauth
-    <!-- JQuery -->
-    <script src="js/jquery.min.js"></script>
-    <!-- JQuery UI -->
-    <script src="js/jquery-ui.min.js" defer></script>
-    <!-- Pooper JS -->
-    <script src="js/popper.min.js" defer></script>
-    <!-- Bootstrap 4.4.1 -->
-    <script src="js/bootstrap.min.js" defer></script>
-    <!-- Flickity 2.2.1 -->
-    <script src="js/flickity.min.js" defer></script>
-    <!-- Main JS -->
-    <script src="js/main.js" defer></script>
+
 @endsection
