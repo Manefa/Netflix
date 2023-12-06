@@ -47,6 +47,12 @@
                                 </button>
                             </a>
 
+                            <form method="POST" action="{{route('personnes.destroy', [$personne->id]) }}" class="mt-2">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Supprimer</button>
+                            </form>
+
                         </div>
                     </div>
                 @endforeach

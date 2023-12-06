@@ -97,6 +97,24 @@
                         <p>Il ny a aucun genre.</p>
                     @endif
                 </div>
+
+                <div class="row">
+                    <h3>Producteurs</h3>
+                </div>
+            
+                <div class="col-md-2">
+                    <img src={{ $film->producteur->photo }} alt="Producteur" class="img-fluid">
+            
+                </div>
+            
+                <div class="row">
+                    <h3>Realisateurs</h3>
+                </div>
+            
+                <div class="col-md-2">
+                    <img src={{ $film->realisateur->photo }} alt="Réalisateur" class="img-fluid">
+            
+                </div>
             </div>
         </div>
     </div>
@@ -104,7 +122,7 @@
     </div>
 
     <div class="row">
-        Acteurs
+        <h3>Acteurs</h3>
     </div>
 
     <div class="row">
@@ -120,23 +138,7 @@
 
     </div>
 
-    <div class="row">
-        Producteurs
-    </div>
 
-    <div class="col-md-2">
-        <img src={{ $film->producteur->photo }} alt="Producteur" class="img-fluid">
-
-    </div>
-
-    <div class="row">
-        Realisateurs
-    </div>
-
-    <div class="col-md-2">
-        <img src={{ $film->realisateur->photo }} alt="Réalisateur" class="img-fluid">
-
-    </div>
     </div>
 
 </body>

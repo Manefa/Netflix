@@ -31,17 +31,29 @@ Route::get('/films/creation', [FilmsController::class, 'create'])->name('films.c
 
 Route::post('/films', [FilmsController::class, 'store'])->name('films.store')->middleware('auth');
 
+// film par genre
+Route::get('/films/parGenre', [FilmsController::class, 'filmsParGenre'])->name('films.parGenre');
+
+
+/*Personne*/
+
 Route::get('/personnes/liste', [PersonnesController::class, 'index'])->name('personnes.liste')->middleware('auth');
+
+Route::get('/personnes/{personne}/', [PersonnesController::class, 'show'])->name('personnes.show')->middleware('auth');
 
 Route::get('/personnes/creation', [PersonnesController::class, 'create'])->name('personnes.create')->middleware('auth');
 
-Route::post('/personnes',  [PersonnesController::class, 'store'])->name('personnes.store')->middleware('auth');
+Route::post('/personnes', [PersonnesController::class, 'store'])->name('personnes.store')->middleware('auth');
 
-Route::get('/personnes/{personne}/modifier/', 
-[PersonnesController::class, 'edit'])->name('personnes.edit')->middleware('auth');
+Route::get(
+    '/personnes/{personne}/modifier/',
+    [PersonnesController::class, 'edit']
+)->name('personnes.edit')->middleware('auth');
 
-Route::patch('/personnes/{personne}/modifier', 
-[PersonnesController::class, 'update'])->name('personnes.update')->middleware('auth');
+Route::delete(
+    '/personnes/{personne}',
+    [PersonnesController::class, 'destroy']
+)->name('personnes.destroy')->middleware('auth');
 
 
 Route::get('/netflixs/{film}/', [FilmsController::class, 'zoom'])->name('netflixs.zoom')->middleware('auth');

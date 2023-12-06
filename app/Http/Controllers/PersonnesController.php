@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use App\Models\Personne;
+use App\Models\Film;
 
 
 class PersonnesController extends Controller
@@ -114,7 +115,20 @@ class PersonnesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        try {
+            $film = Film::findOrFail($id);
+            //Si un film a des acteurs, on ne peut pas le supprimer.
+            $film->acteurs()->detach();
+
+            $film->delete();
+            return redirect()->route('personnes.liste')->with('message', "Suppression de " . $film->nom . " réussi!");
+        } catch (\Throwable $e) {
+            //Gérer l'erreur
+            Log::debug($e);
+            return redirect()->route('personnes.liste')->withErrors(['la suppression n\'a pas fonctionné']);
+        }
+        return redirect()->route('personnes.liste');
+
     }
 
 }

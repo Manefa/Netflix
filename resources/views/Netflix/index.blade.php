@@ -13,127 +13,144 @@
             </ol>
             <div class="carousel-inner">
 
-                <!-- Stranger Things - OPEN -->
-                <div class="carousel-item active">
-                    <img class="d-block w-100 " src={{ $films[0]->couverture_url }} style="object-fit: cover; "
-                        alt="Second slide">
-                    <div class="carousel-caption d-none d-md-block container-lg align-middle">
-                        <h1> {{ $films[0]->titre }} </h1>
-                        <p> <a href="#">{{ $films[0]->annee_de_production }}</a> | {{ $films[0]->notation }} | <a
-                                href="#">{{ $films[0]->genres[0]->titre }}</a> </p>
-                        <p class="margin-top-under-sm">
-                            {{ $films[0]->resume }}
-                        </p>
-                        <p>
-                            Starring:
+                @if (count($films) >= 0)
+
+                    <!-- Stranger Things - OPEN -->
+                    <div class="carousel-item active">
+                        <img class="d-block w-100 " src={{ $films[0]->couverture_url }} style="object-fit: cover; "
+                            alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block container-lg align-middle">
+                            <h1> {{ $films[0]->titre }} </h1>
+                            <p> <a href="#">{{ $films[0]->annee_de_production }}</a> | {{ $films[0]->notation }} | <a
+                                    href="#">{{ $films[0]->genres[0]->titre }}</a> </p>
+                            <p class="margin-top-under-sm">
+                                {{ $films[0]->resume }}
+                            </p>
+                            <p>
+                                Starring:
 
 
-                            @if (count($films[0]->acteurs))
-                                @foreach ($films[0]->acteurs as $acteur)
-                                    <a href="#">{{ $acteur->nom }}, </a>
-                                @endforeach
-                            @else
-                                <p>Il ny a aucun acteur.</p>
-                            @endif
+                                @if (count($films[0]->acteurs))
+                                    @foreach ($films[0]->acteurs as $acteur)
+                                        <a href="#">{{ $acteur->nom }}, </a>
+                                    @endforeach
+                                @else
+                                    <p>Il ny a aucun acteur.</p>
+                                @endif
 
 
 
-                        </p>
-                        <p> Creators: <a href="#">{{ $films[0]->producteur->nom }}</a> </p>
-                        <div class="margin-top-under-sm">
-                            <a href="#" class="btn btn-primary btn-lg margin-right" role="button" aria-pressed="true">
-                                <img src="media/icons/play.png" width="20" alt="">
-                                Watch
-                            </a>
-                            <a href="#" class="btn btn-secondary btn-lg margin-right" role="button" aria-pressed="true">
-                                <img src="media/icons/plus.png" width="15" alt="">
-                                Add List
-                            </a>
+                            </p>
+                            <p> Creators: <a href="#">{{ $films[0]->producteur->nom }}</a> </p>
+                            <div class="margin-top-under-sm">
+                                <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
+                                    aria-pressed="true">
+                                    <img src="media/icons/play.png" width="20" alt="">
+                                    Watch
+                                </a>
+                                <a href="#" class="btn btn-secondary btn-lg margin-right" role="button"
+                                    aria-pressed="true">
+                                    <img src="media/icons/plus.png" width="15" alt="">
+                                    Add List
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Stranger Things - CLOSE -->
+                    <!-- Stranger Things - CLOSE -->
+                @else
+                @endif
 
-                <!-- Money Heist - OPEN -->
-                <div class="carousel-item">
-                    <img class="d-block w-100" src={{ $films[1]->couverture_url }} style="object-fit: cover; "
-                        alt="First slide">
-                    <div class="carousel-caption d-none d-md-block container-lg align-middle">
-                        <h1> {{ $films[1]->titre }} </h1>
-                        <p> <a href="#">{{ $films[1]->annee_de_production }}</a> | {{ $films[1]->notation }} | <a
-                                href="#">{{ $films[1]->genres[0]->titre }}</a> </p>
-                        <p class="margin-top-under-sm">
-                            {{ $films[1]->resume }}
-                        </p>
-                        <p>
-                            Starring:
-
-
-                            @if (count($films[1]->acteurs))
-                                @foreach ($films[1]->acteurs as $acteur)
-                                    <a href="#">{{ $acteur->nom }}, </a>
-                                @endforeach
-                            @else
-                                <p>Il ny a aucun acteur.</p>
-                            @endif
+                @if (count($films) > 2)
+                    <!-- Money Heist - OPEN -->
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src={{ $films[1]->couverture_url }} style="object-fit: cover; "
+                            alt="First slide">
+                        <div class="carousel-caption d-none d-md-block container-lg align-middle">
+                            <h1> {{ $films[1]->titre }} </h1>
+                            <p> <a href="#">{{ $films[1]->annee_de_production }}</a> | {{ $films[1]->notation }} | <a
+                                    href="#">{{ $films[1]->genres[0]->titre }}</a> </p>
+                            <p class="margin-top-under-sm">
+                                {{ $films[1]->resume }}
+                            </p>
+                            <p>
+                                Starring:
 
 
+                                @if (count($films[1]->acteurs))
+                                    @foreach ($films[1]->acteurs as $acteur)
+                                        <a href="#">{{ $acteur->nom }}, </a>
+                                    @endforeach
+                                @else
+                                    <p>Il ny a aucun acteur.</p>
+                                @endif
 
-                        </p>
-                        <p> Creators: <a href="#">{{ $films[1]->producteur->nom }}</a> </p>
-                        <div class="margin-top-under-sm">
-                            <a href="#" class="btn btn-primary btn-lg margin-right" role="button" aria-pressed="true">
-                                <img src="media/icons/play.png" width="20" alt="">
-                                Watch
-                            </a>
-                            <a href="#" class="btn btn-secondary btn-lg margin-right" role="button" aria-pressed="true">
-                                <img src="media/icons/plus.png" width="15" alt="">
-                                Add List
-                            </a>
+
+
+                            </p>
+                            <p> Creators: <a href="#">{{ $films[1]->producteur->nom }}</a> </p>
+                            <div class="margin-top-under-sm">
+                                <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
+                                    aria-pressed="true">
+                                    <img src="media/icons/play.png" width="20" alt="">
+                                    Watch
+                                </a>
+                                <a href="#" class="btn btn-secondary btn-lg margin-right" role="button"
+                                    aria-pressed="true">
+                                    <img src="media/icons/plus.png" width="15" alt="">
+                                    Add List
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Money Heist - OPEN -->
+                    <!-- Money Heist - OPEN -->
+                @else
+                @endif
 
-                <!-- The Witcher - OPEN -->
-                <div class="carousel-item">
-                    <img class="d-block w-100" src={{ $films[2]->couverture_url }} cover alt="Third slide">
-                    <div class="carousel-caption d-none d-md-block container-lg align-middle">
-                        <h1> {{ $films[2]->titre }} </h1>
-                        <p> <a href="#">{{ $films[2]->annee_de_production }}</a> | {{ $films[2]->notation }} | <a
-                                href="#">{{ $films[2]->genres[0]->titre }}</a> </p>
-                        <p class="margin-top-under-sm">
-                            {{ $films[2]->resume }}
-                        </p>
-                        <p>
-                            Starring:
+                @if (count($films) >= 2)
 
-
-                            @if (count($films[2]->acteurs))
-                                @foreach ($films[2]->acteurs as $acteur)
-                                    <a href="#">{{ $acteur->nom }}, </a>
-                                @endforeach
-                            @else
-                                <p>Il ny a aucun acteur.</p>
-                            @endif
+                    <!-- The Witcher - OPEN -->
+                    <div class="carousel-item">
+                        <img class="d-block w-100" src={{ $films[2]->couverture_url }} cover alt="Third slide">
+                        <div class="carousel-caption d-none d-md-block container-lg align-middle">
+                            <h1> {{ $films[2]->titre }} </h1>
+                            <p> <a href="#">{{ $films[2]->annee_de_production }}</a> | {{ $films[2]->notation }} | <a
+                                    href="#">{{ $films[2]->genres[0]->titre }}</a> </p>
+                            <p class="margin-top-under-sm">
+                                {{ $films[2]->resume }}
+                            </p>
+                            <p>
+                                Starring:
 
 
+                                @if (count($films[2]->acteurs))
+                                    @foreach ($films[2]->acteurs as $acteur)
+                                        <a href="#">{{ $acteur->nom }}, </a>
+                                    @endforeach
+                                @else
+                                    <p>Il ny a aucun acteur.</p>
+                                @endif
 
-                        </p>
-                        <p> Creators: <a href="#">{{ $films[1]->producteur->nom }}</a> </p>
-                        <div class="margin-top-under-sm">
-                            <a href="#" class="btn btn-primary btn-lg margin-right" role="button" aria-pressed="true">
-                                <img src="media/icons/play.png" width="20" alt="">
-                                Watch
-                            </a>
-                            <a href="#" class="btn btn-secondary btn-lg margin-right" role="button" aria-pressed="true">
-                                <img src="media/icons/plus.png" width="15" alt="">
-                                Add List
-                            </a>
+
+
+                            </p>
+                            <p> Creators: <a href="#">{{ $films[1]->producteur->nom }}</a> </p>
+                            <div class="margin-top-under-sm">
+                                <a href="#" class="btn btn-primary btn-lg margin-right" role="button"
+                                    aria-pressed="true">
+                                    <img src="media/icons/play.png" width="20" alt="">
+                                    Watch
+                                </a>
+                                <a href="#" class="btn btn-secondary btn-lg margin-right" role="button"
+                                    aria-pressed="true">
+                                    <img src="media/icons/plus.png" width="15" alt="">
+                                    Add List
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- The Witcher - OPEN -->
+                    <!-- The Witcher - OPEN -->
+                @else
+                @endif
 
             </div>
         </div>
@@ -294,10 +311,15 @@
 
                         @if (count($genres))
                             @foreach ($genres as $genre)
-                                <div class="carousel-filter-cell text-center">
-                                    <button class="btn btn-outline-primary btn-md margin-top-under-sm" data-filter=".Action">
-                                        {{ $genre->titre }}
-                                    </button>
+                                <div id="filter" class="carousel-filter-cell text-center">
+                                    <form action="{{ route('films.parGenre') }}" method="get">
+                                        <button class="btn btn-outline-primary btn-md margin-top-under-sm"
+                                            data-genre="{{ $genre->titre }}">
+                                            {{ $genre->titre }}
+                                        </button>
+                                        <input type="hidden" name="genre" value="{{ $genre->titre }}">
+                                    </form>
+
                                 </div>
                             @endforeach
                         @else
@@ -342,10 +364,9 @@
                     <div id="grid-movies">
 
                         <div class="row">
-
                             @if (count($films))
                                 @foreach ($films as $film)
-                                    <div class="card carousel-cell">
+                                    <div class=" carousel-cell">
                                         <img class="card-img-top" src={{ $film->pochette_url }} />
                                         <h5 class="card-title text-center"> {{ $film->titre }} </h5>
                                         <div class="row">
@@ -383,12 +404,12 @@
                                             </div>
                                         </div>
                                     </div>
+
                                     <!-- Beasts of No Nation - OPEN -->
                                 @endforeach
                             @else
-                                <p>Il ny a aucun genres.</p>
+                                <p>Il ny a aucun film.</p>
                             @endif
-
                         </div>
 
                     </div>
@@ -408,17 +429,13 @@
 
         </div>
         <!-- Content - CLOSE -->
-
-        <div class="content">
-            @yield('content')
-        </div>
     @else
         <div class="container-fluid d-flex justify-content-center align-items-center" style="height: 100vh;">
             <div class="col-md-12 d-flex justify-content-center aligns-items-center">
                 <div class="col-md-4 d-flex flex-column justify-content-center align-items-center">
                     <h1>Veuillez vous connecter !</h1>
                     <a href="{{ route('showLoginForm') }}" class="btn btn-primary mt-2">Page de connexion...</a>
-                </div>                
+                </div>
             </div>
         </div>
     @endauth
@@ -434,4 +451,5 @@
     <script src="js/flickity.min.js" defer></script>
     <!-- Main JS -->
     <script src="js/main.js" defer></script>
+
 @endsection

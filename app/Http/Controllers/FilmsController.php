@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Film;
 use App\Models\Personne;
 use App\Models\Genre;
@@ -31,18 +32,20 @@ class FilmsController extends Controller
         return View('Netflix.zoom', compact('film'));
     }
 
-    public function create() {
+    public function create()
+    {
         $films = Film::all();
         $genres = Genre::all();
         $personnes = Personne::all();
         $langues = Langue::all();
         $sous_titres = Sous_titre::all();
-        return View('Netflix.create', compact('films','genres', 'personnes', 'langues', 'sous_titres'));
+        return View('Netflix.create', compact('films', 'genres', 'personnes', 'langues', 'sous_titres'));
     }
 
-    
 
-    public function store(FilmRequest $request) {
+
+    public function store(FilmRequest $request)
+    {
         try {
             $film = new Film($request->all());
             //dd($film);
@@ -52,11 +55,30 @@ class FilmsController extends Controller
             $film->acteurs()->attach($request->input('personne_id'), ['created_at' => now(), 'updated_at' => now()]);
             $film->langues()->attach($request->input('langue_id'), ['created_at' => now(), 'updated_at' => now()]);
             $film->sous_titres()->attach($request->input('sous_titre_id'), ['created_at' => now(), 'updated_at' => now()]);
-        }
-        catch(\Throwable $e) {
+        } catch (\Throwable $e) {
             Log::debug($e);
         }
         return redirect()->route('netflix');
     }
+
+    public function filmsParGenre(Request $request)
+    {
+        // Récupérez la valeur du paramètre "genre" depuis la requête
+        $genre = $request->input('genre');
+
+        // Si un genre est spécifié, filtrez les films par ce genre
+        $query = Film::query();
+        if ($genre) {
+            $query->whereHas('genres', function ($q) use ($genre) {
+                $q->where('titre', $genre);
+            });
+        }
+
+        // Récupérez la liste des films en fonction du filtre appliqué
+        $films = $query->get();
+        $genres = Genre::all();
+        return View('Netflix.index', compact('films', 'genres'));
+    }
+
 
 }
