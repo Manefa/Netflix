@@ -70,5 +70,9 @@ Route::post('/login', [UsagersController::class, 'login'])->name('login');
 
 Route::post('/logout', [UsagersController::class, 'logout'])->name('logout')->middleware('auth');
 
+Route::get('/usager/liste', [UsagersController::class, 'liste'])->name('usagers.liste')->middleware('auth');
+
+Route::get('/usager/creation', [UsagersController::class, 'create'])->name('usagers.ajouter')->middleware('auth');
+
 
 // Mettre liens avec variables en dernier.

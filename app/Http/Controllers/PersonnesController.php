@@ -73,9 +73,12 @@ class PersonnesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Personne $personne)
     {
-        //
+        $films = $personne->films;
+        //$films = Film::all();
+
+        return View('Personne.show', compact('personne', 'films'));
     }
 
     /**

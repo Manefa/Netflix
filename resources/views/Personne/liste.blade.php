@@ -37,6 +37,7 @@
         <div class="row">
             @if (count($personnes))
                 @foreach ($personnes as $personne)
+                <a href="{{ route('personnes.show', [$personne]) }}">
                     <div class="col-md-2 mt-2 img-container">
                         <img src="{{ $personne->photo }}" alt="" class="img-fluid w-100 h-100">
                         <div class="actor-name">{{ $personne->nom }}</div>
@@ -52,9 +53,9 @@
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger"><i class="bi bi-trash"></i> Supprimer</button>
                             </form>
-
                         </div>
                     </div>
+                </a>
                 @endforeach
             @else
                 <p>Il n'y a aucun acteur.</p>

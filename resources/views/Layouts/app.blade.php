@@ -135,6 +135,11 @@
                             Ajouter film
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link navbar-nav-item" href="{{ route('usagers.liste') }}">
+                            Liste des utilisateurs
+                        </a>
+                    </li>
                 </ul>
                 <!-- Left - CLOSE -->
 

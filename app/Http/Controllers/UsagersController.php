@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usager;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -17,12 +18,18 @@ class UsagersController extends Controller
         return view("Auth.login");
     }
 
+    public function liste()
+    {
+        $usagers = Usager::all();
+        return view("Auth.liste", compact('usagers'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return View('personne.create');
     }
 
     /**
