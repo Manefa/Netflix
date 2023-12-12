@@ -68,6 +68,25 @@ class FilmsController extends Controller
         return View('Netflix.edit', compact('film', 'genres', 'personnes', 'langues', 'sous_titres'));
     }
 
+    public function filmsParGenre(Request $request)
+    {
+        // Récupérez la valeur du paramètre "genre" depuis la requête
+        $genre = $request->input('genre');
+
+        // Si un genre est spécifié, filtrez les films par ce genre
+        $query = Film::query();
+        if ($genre) {
+            $query->whereHas('genres', function ($q) use ($genre) {
+                $q->where('titre', $genre);
+            });
+        }
+
+        // Récupérez la liste des films en fonction du filtre appliqué
+        $films = $query->get();
+        $genres = Genre::all();
+        return View('Netflix.index', compact('films', 'genres'));
+    }
+
     public function update(FilmRequest $request, Film $film) {
         try {
             $film->genres()->detach();
