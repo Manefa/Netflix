@@ -45,7 +45,7 @@ class PersonnesController extends Controller
      */
     public function create()
     {
-        return View('personne.create');
+        return View('Personne.create');
     }
 
     /**
@@ -119,12 +119,12 @@ class PersonnesController extends Controller
     public function destroy(string $id)
     {
         try {
-            $film = Film::findOrFail($id);
+            $personne = Personne::findOrFail($id);
             //Si un film a des acteurs, on ne peut pas le supprimer.
-            $film->acteurs()->detach();
+            $personne->acteurs()->detach();
 
-            $film->delete();
-            return redirect()->route('personnes.liste')->with('message', "Suppression de " . $film->nom . " réussi!");
+            $personne->delete();
+            return redirect()->route('personnes.liste')->with('message', "Suppression de " . $personne->nom . " réussi!");
         } catch (\Throwable $e) {
             //Gérer l'erreur
             Log::debug($e);
