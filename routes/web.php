@@ -35,7 +35,7 @@ Route::post('/films', [FilmsController::class, 'store'])->name('films.store')->m
 Route::get('/films/parGenre', [FilmsController::class, 'filmsParGenre'])->name('films.parGenre');
 
 
-/*Personne*/
+/*Personne Route Bigin*/
 
 Route::get('/personnes/liste', [PersonnesController::class, 'index'])->name('personnes.liste')->middleware('auth');
 
@@ -50,10 +50,15 @@ Route::get(
     [PersonnesController::class, 'edit']
 )->name('personnes.edit')->middleware('auth');
 
+Route::patch('/personnes/{personne}/modifier', 
+[PersonnesController::class, 'update'])->name('personnes.update')->middleware('auth');
+
 Route::delete(
     '/personnes/{personne}',
     [PersonnesController::class, 'destroy']
 )->name('personnes.destroy')->middleware('auth');
+
+/*Personne Route End*/
 
 
 Route::get('/netflixs/{film}/', [FilmsController::class, 'zoom'])->name('netflixs.zoom')->middleware('auth');
@@ -62,7 +67,7 @@ Route::get('/films/{film}/', [FilmsController::class, 'show'])->name('films.show
 
 
 
-/*Authentification*/
+/*Authentification Route Bigin*/
 
 Route::get('/login', [UsagersController::class, 'index'])->name('showLoginForm');
 
@@ -73,6 +78,16 @@ Route::post('/logout', [UsagersController::class, 'logout'])->name('logout')->mi
 Route::get('/usager/liste', [UsagersController::class, 'liste'])->name('usagers.liste')->middleware('auth');
 
 Route::get('/usager/creation', [UsagersController::class, 'create'])->name('usagers.ajouter')->middleware('auth');
+
+Route::post('/usager', [UsagersController::class, 'store'])->name('usagers.store')->middleware('auth');
+
+Route::get('/usagers/{usager}/modifier/',[UsagersController::class, 'edit'])->name('usagers.edit')->middleware('auth');
+
+Route::patch('/usagers/{usager}/modifier', [UsagersController::class, 'update'])->name('usagers.update')->middleware('auth');
+
+Route::delete('/usagers/{usager}',[UsagersController::class, 'destroy'])->name('usagers.destroy')->middleware('auth');
+
+/*Authentification Route End*/
 
 
 // Mettre liens avec variables en dernier.

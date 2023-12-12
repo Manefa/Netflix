@@ -15,10 +15,10 @@
                             <p class="card-text"><strong>Rôle:</strong> {{ $usager->role }}</p>
 
                             {{-- Bouton Modifier --}}
-                            <a href="" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i> Modifier</a>
+                            <a href="{{route('usagers.edit', [$usager])}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i> Modifier</a>
 
                             {{-- Bouton Supprimer --}}
-                            <form action="" method="POST" style="width: 100px;" class="mt-2">
+                            <form method="POST" action="{{route('usagers.destroy', [$usager->id]) }}" style="width: 100px;" class="mt-2">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger"
@@ -32,7 +32,7 @@
         </div>
         <div class="row">
             <div class="col-md-2">
-                <button type="button" class="btn btn-success"><a href="{{ route('usagers.ajouter') }}">Ajouter un utilisateur</a></button>
+                <button type="button" class="btn btn-success"><a style="text-decoration: none" href="{{ route('usagers.ajouter') }}">Ajouter un utilisateur</a></button>
             </div>
 
         </div>
