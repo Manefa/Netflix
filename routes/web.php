@@ -40,9 +40,9 @@ Route::get('/personnes/liste', [PersonnesController::class, 'index'])->name('per
 
 Route::get('/personnes/{personne}/', [PersonnesController::class, 'show'])->name('personnes.show')->middleware('auth');
 
-Route::get('/personnes/creation', [PersonnesController::class, 'create'])->name('personnes.create')->middleware('auth');
+Route::get('/personnes/creation/cree', [PersonnesController::class, 'create'])->name('personnes.create')->middleware('auth');
 
-Route::get('/personnes/ajouter', [PersonnesController::class, 'create'])->name('personnes.ajouter')->middleware('auth');
+//Route::get('/personnes/liste/test', [PersonnesController::class, 'create'])->name('personnes.test')->middleware('auth');
 
 Route::post('/personnes', [PersonnesController::class, 'store'])->name('personnes.store')->middleware('auth');
 

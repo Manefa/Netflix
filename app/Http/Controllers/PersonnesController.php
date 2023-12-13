@@ -45,10 +45,8 @@ class PersonnesController extends Controller
      */
     public function create()
     {
-        $personnes = Personne::all();
 
-
-        return View('Personne.liste', compact('personnes'));
+        return View('Personne.create');
     }
 
     /**
