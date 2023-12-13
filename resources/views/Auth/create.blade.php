@@ -4,6 +4,8 @@
 
 @section('contenu')
 
+    {!! JsValidator::formRequest('App\Http\Requests\FilmRequest') !!}
+
     <div class="container-fluid w-50" style="margin-top: 100px;">
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
@@ -21,16 +23,25 @@
                     <div class="form-group">
                         <label for="nom">Nom</label>
                         <input type="text" class="form-control" id="nom" placeholder="Nom" name="nom">
+                        @error('nom')
+                            <div style="color:red; font-weight:bold">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="prenom">Prénom</label>
                         <input type="text" class="form-control" id="prenom" placeholder="Prénom" name="prenom">
+                        @error('prenom')
+                            <div style="color:red; font-weight:bold">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+                        @error('email')
+                            <div style="color:red; font-weight:bold">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
@@ -40,12 +51,18 @@
                             <option value="normal">Normal</option>
                             <option value="enfant">Enfant</option>
                         </select>
+                        @error('role')
+                            <div style="color:red; font-weight:bold">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <div class="form-group">
                         <label for="password">Mot de passe</label>
                         <input type="password" class="form-control" id="password" placeholder="Mot de passe"
                             name="password">
+                        @error('password')
+                            <div style="color:red; font-weight:bold">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <button type="submit" class="btn btn-primary">Enregistrer</button>

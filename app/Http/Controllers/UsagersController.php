@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\ErrorHandler\Debug;
+use App\Http\Requests\UtilisateurRequest;
 
 class UsagersController extends Controller
 {
