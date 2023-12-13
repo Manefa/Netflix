@@ -130,11 +130,11 @@
                             Home <span class="sr-only">(current)</span>
                         </a>
                     </li>
-                    <li class="nav-item">
+                    @role('admin')<li class="nav-item">
                         <a class="nav-link navbar-nav-item" href="{{ route('films.create') }}">
                             Ajouter film
                         </a>
-                    </li>
+                    </li>@endrole
                     <li class="nav-item">
                         <a class="nav-link navbar-nav-item" href="{{ route('usagers.liste') }}">
                             Liste des utilisateurs
@@ -163,7 +163,7 @@
 
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="{{ route('personnes.liste') }}">Lister</a>  
-                                <a class="dropdown-item" href="{{ route('personnes.create') }}">Ajouter</a>
+                                @role('admin') <a class="dropdown-item" href="{{ route('personnes.create') }}">Ajouter</a>@endrole
                             </div>
                         </div>
                     </li>
