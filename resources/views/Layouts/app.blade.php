@@ -162,8 +162,8 @@
                                 aria-expanded="false" style="font-size: 1.5rem; color:white;"></i>
 
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="{{ route('personnes.liste') }}">Lister</a>
-                                <a class="dropdown-item" href="{{ route('personnes.create') }}">Ajouter</a>
+                                <a class="dropdown-item" href="{{ route('personnes.liste') }}">Lister</a>  
+                                <a class="dropdown-item" href="{{ route('personnes.ajouter') }}">Ajouter</a>
                             </div>
                         </div>
                     </li>
