@@ -45,17 +45,20 @@ class PersonnesController extends Controller
      */
     public function create()
     {
+
         return View('Personne.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(PersonneRequest $request)
     {
-        $name = request()->nom;
 
-        event(new PersonneAdd($name));
+        
+        //$name = request()->nom;
+
+        //event(new PersonneAdd($name));
 
         try {
             $personne = new Personne($request->all());
@@ -64,10 +67,11 @@ class PersonnesController extends Controller
             //Gérer l'erreur
             Log::debug($e);
         }
-        return redirect()->route('personnes.create');
+        //return redirect()->route('personnes.create');
+        return redirect()->route('personnes.liste');
+        
 
-
-        return View('personnes.create');
+        //return View('personnes.create');
     }
 
     /**
@@ -124,7 +128,7 @@ class PersonnesController extends Controller
             $personne->acteurs()->detach();
 
             $personne->delete();
-            return redirect()->route('personnes.liste')->with('message', "Suppression de " . $personne->nom . " réussi!");
+            return redirect()->route('personnes.liste')->with('message', "Suppression  réussi!");
         } catch (\Throwable $e) {
             //Gérer l'erreur
             Log::debug($e);

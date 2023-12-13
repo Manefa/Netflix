@@ -23,9 +23,6 @@ use App\HTTP\Controllers\UsagersController;
     return view('welcome');
 });*/
 
-//Index
-Route::get('/', [NetflixsController::class, 'index'])->name('netflix')->middleware('auth');
-
 Route::get('netflixs', [NetflixsController::class, 'index'])->name('netflix')->middleware('auth');
 
 //Création films
@@ -33,8 +30,9 @@ Route::get('/films/creation', [FilmsController::class, 'create'])->name('films.c
 
 Route::post('/films', [FilmsController::class, 'store'])->name('films.store')->middleware('auth');
 
-// film par genre
-Route::get('/films/parGenre', [FilmsController::class, 'filmsParGenre'])->name('films.parGenre');
+Route::get('/films/{film}/', [FilmsController::class, 'show'])->name('films.show')->middleware('auth');
+
+Route::get('/films/parGenre', [FilmsController::class, 'filmsParGenre'])->name('films.parGenre')->middleware('auth');
 
 
 /*Personne Route Bigin*/
@@ -43,7 +41,9 @@ Route::get('/personnes/liste', [PersonnesController::class, 'index'])->name('per
 
 Route::get('/personnes/{personne}/', [PersonnesController::class, 'show'])->name('personnes.show')->middleware('auth');
 
-Route::get('/personnes/creation', [PersonnesController::class, 'create'])->name('personnes.create')->middleware('auth');
+Route::get('/personnes/creation/cree', [PersonnesController::class, 'create'])->name('personnes.create')->middleware('auth');
+
+//Route::get('/personnes/liste/test', [PersonnesController::class, 'create'])->name('personnes.test')->middleware('auth');
 
 Route::post('/personnes', [PersonnesController::class, 'store'])->name('personnes.store')->middleware('auth');
 
@@ -71,13 +71,6 @@ Route::delete(
 )->name('personnes.destroy')->middleware('auth');
 
 /*Personne Route End*/
-
-
-Route::get('/netflixs/{film}/', [FilmsController::class, 'zoom'])->name('netflixs.zoom')->middleware('auth');
-
-Route::get('/films/{film}/', [FilmsController::class, 'show'])->name('films.show')->middleware('auth');
-
-
 
 /*Authentification Route Bigin*/
 
