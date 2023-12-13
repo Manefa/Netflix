@@ -73,13 +73,13 @@
                         <label for="pochetteURL">URL de la pochette</label>
                         <input type="url" class="form-control" id="pochetteURL" placeholder="Pochette"
                             name="pochette_url">
-                        @error('resume')
+                        @error('pochette_url')
                             <div style="color:red; font-weight:bold">{{ $message }}</div>
                         @enderror
                         <label for="couvertureURL">URL de la couverture</label>
                         <input type="url" class="form-control" id="couvertureURL" placeholder="Couverture"
                             name="couverture_url">
-                        @error('resume')
+                        @error('couverture_url')
                             <div style="color:red; font-weight:bold">{{ $message }}</div>
                         @enderror
                         <label for="coteFilm">Cote du film</label>
@@ -101,7 +101,7 @@
                                 <option value="{{ $genre->id }}">{{ $genre->titre }}</option>
                             @endforeach
                         </select>
-                        @error('resume')
+                        @error('genre_id[]')
                             <div style="color:red; font-weight:bold">{{ $message }}</div>
                         @enderror
                         <label>
@@ -113,7 +113,7 @@
                                 <option value="{{ $personne->id }}">{{ $personne->nom }}</option>
                             @endforeach
                         </select>
-                        @error('resume')
+                        @error('personne_id[]')
                             <div style="color:red; font-weight:bold">{{ $message }}</div>
                         @enderror
                         <label>
@@ -125,7 +125,7 @@
                                 <option value="{{ $langue->id }}">{{ $langue->code }}</option>
                             @endforeach
                         </select>
-                        @error('resume')
+                        @error('langue_id[]')
                             <div style="color:red; font-weight:bold">{{ $message }}</div>
                         @enderror
                         <label>
@@ -137,7 +137,7 @@
                                 <option value="{{ $sous_titre->id }}">{{ $sous_titre->code }}</option>
                             @endforeach
                         </select>
-                        @error('resume')
+                        @error('sous_titre_id[]')
                             <div style="color:red; font-weight:bold">{{ $message }}</div>
                         @enderror
                     </div>

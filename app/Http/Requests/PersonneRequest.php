@@ -22,11 +22,35 @@ class PersonneRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nom' => 'required|min:3',
-            'date_naissance' => 'required|date', 
-            'photo' => 'required',
-            'role_principal' => 'max:255',
-            'biographie' => 'max:2000',
+            'nom' => 'required|min:3|string',
+            'date_naissance' => 'required|date',
+            'photo' => 'required|string|max:255',
+            'role_principal' => 'required|string|max:255',
+            'biographie' => 'required|string|max:2000',
+        ];
+    }
+
+    public function messages() {
+        return [
+            'nom.required' => 'Le champ du nom est requis.',
+            'nom.min' => 'Le nom doit avoir au moins :min caractères.',
+            'nom.string' => 'Le nom doit être une chaîne de caractères.',
+    
+            'date_naissance.required' => 'Le champ de la date de naissance est requis.',
+            'date_naissance.date' => 'La date de naissance doit être une date valide.',
+    
+            'photo.required' => 'Le champ de la photo est requis.',
+            'photo.string' => 'Le chemin de la photo doit être une chaîne de caractères.',
+            'photo.max' => 'Le chemin de la photo ne doit pas dépasser :max caractères.',
+    
+            'role_principal.required' => 'Le champ du rôle principal est requis.',
+            'role_principal.string' => 'Le rôle principal doit être une chaîne de caractères.',
+            'role_principal.max' => 'Le rôle principal ne doit pas dépasser :max caractères.',
+    
+            'biographie.required' => 'Le champ de la biographie est requis.',
+            'biographie.string' => 'La biographie doit être une chaîne de caractères.',
+            'biographie.max' => 'La biographie ne doit pas dépasser :max caractères.',
+            
         ];
     }
 }
