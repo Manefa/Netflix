@@ -125,7 +125,7 @@ class PersonnesController extends Controller
         try {
             $personne = Personne::findOrFail($id);
             //Si un film a des acteurs, on ne peut pas le supprimer.
-            $personne->acteurs()->detach();
+            $personne->films()->detach();
 
             $personne->delete();
             return redirect()->route('personnes.liste')->with('message', "Suppression  réussi!");

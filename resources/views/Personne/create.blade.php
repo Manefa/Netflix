@@ -30,6 +30,11 @@
                         @enderror
                     </div>
 
+                    <div class="form-group">
+                        <label for="sexe">Sexe</label>
+                        <input type="text" class="form-control" id="sexe" placeholder="sexe" name="sexe">
+                    </div>
+
 
                     <div class="form-group">
                         <label for="photo">Photo</label>
@@ -39,7 +44,6 @@
                         @enderror
                     </div>
 
-
                     <div class="form-group">
                         <label for="role_principal">Role principal</label>
                         <input type="text" class="form-control" id="role_principal" placeholder="Role principal"
@@ -48,7 +52,6 @@
                             <div style="color:red; font-weight:bold">{{ $message }}</div>
                             @enderror
                     </div>
-
 
                     <div class="form-group">
                         <label for="biographie">biographie</label>
