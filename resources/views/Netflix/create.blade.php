@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Zoom Film')
+@section('title', 'Ajouter Film')
 
 @section('contenu')
     <div class="container-fluid w-50" style="margin-top: 100px;">
@@ -8,6 +8,13 @@
             <div class="col-xl-12">
                 <form method="post" action="{{ route('films.store') }}" enctype="multipart/form-data">
                     @csrf
+                    @if(isset($errors) && $errors->any())
+                    <div>
+                        @foreach($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+                    </div>
+                    @endif
                     <div class="form-group">
                         <label for="titreFilm">Titre du film</label>
                         <input type="text" class="form-control" id="titreFilm" placeholder="Titre" name="titre">
@@ -20,26 +27,24 @@
                             name="annee_de_production">
                         <label for="brandFilm">Brand</label>
                         <input type="text" class="form-control" id="brandFilm" placeholder="Brand" name="brand">
-                        <label for="realisateurInput">Réalisateur du film</label>
-                        <label>
-                            
+
+                        <label for="realisateurInput">
+                            Réalisateur du film
                             <input mbsc-input id="realisateurInput" data-dropdown="true" />
                         </label>
                         <select name="realisateur_id" id="single-select1">
-                            @foreach ($films as $film)
-                                <option value="{{ $film->realisateur_id }}">{{ $film->realisateur->nom }}</option>
+                            @foreach ($personnes as $personne)
+                                <option value="{{ $personne->id }}">{{ $personne->nom }}</option>
                             @endforeach
                         </select>
                        
                         <label for="producteurInput">
                             Producteur du film
-                        </label>
-                        <label>
                             <input mbsc-input id="producteurInput" data-dropdown="true" />
                         </label>
                         <select name="producteur_id" id="single-select2">
-                            @foreach ($films as $film)
-                                <option value="{{ $film->producteur_id }}">{{ $film->producteur->nom }}</option>
+                            @foreach ($personnes as $personne)
+                                <option value="{{ $personne->id }}">{{ $personne->nom }}</option>
                             @endforeach
                         </select>
                         <label for="lienFilm">Lien du film</label>
@@ -133,4 +138,5 @@ mobiscroll.select('#single-select2', {
 });
 
 </script>
+
 @endsection

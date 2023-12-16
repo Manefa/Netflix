@@ -25,6 +25,7 @@ use App\HTTP\Controllers\UsagersController;
 
 Route::get('/', [NetflixsController::class, 'index'])->name('netflix')->middleware('auth');
 
+//Création films
 Route::get('/films/creation', [FilmsController::class, 'create'])->name('films.create')->middleware('auth');
 
 Route::post('/films', [FilmsController::class, 'store'])->name('films.store')->middleware('auth');
@@ -54,6 +55,16 @@ Route::get(
 Route::patch('/personnes/{personne}/modifier', 
 [PersonnesController::class, 'update'])->name('personnes.update')->middleware('auth');
 
+//Modification films
+Route::get('/films/{film}/modifier', 
+[FilmsController::class, 'edit'])->name('films.edit')->middleware('auth');
+
+Route::patch('/films/{film}/modifier', 
+[FilmsController::class, 'update'])->name('films.update')->middleware('auth');
+
+//Suppression de films
+Route::delete('/films/{film}/supprimer', 
+[FilmsController::class, 'destroy'])->name('films.destroy')->middleware('auth');
 Route::delete(
     '/personnes/{personne}',
     [PersonnesController::class, 'destroy']
