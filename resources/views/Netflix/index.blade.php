@@ -367,7 +367,7 @@
                             @if (count($films))
                                 @foreach ($films as $film)
                                     <div class=" carousel-cell">
-                                        <img class="card-img-top" src={{ $film->pochette_url }} />
+                                        <img class="card-img-top" src={{ asset('img/films/' . $film->pochette_url) }} />
                                         <h5 class="card-title text-center"> {{ $film->titre }} </h5>
                                         <div class="row">
                                             <div class="col-3 text-left no-padding">

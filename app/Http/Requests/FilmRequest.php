@@ -31,7 +31,7 @@ class FilmRequest extends FormRequest
             'producteur_id' => 'required',
             'lienfilm' => 'required|active_url|min:2|max:100',
             'couverture_url' => 'required|active_url|min:2|max:100',
-            'pochette_url' => 'required|active_url|min:2|max:100',
+            // 'pochette_url' => 'required|active_url|min:2|max:100',
             'cote' => 'required|integer|between:0,100',
             'notation' => 'required|string|min:2|max:50',
             'genre_id' => 'required'

@@ -48,15 +48,29 @@ class FilmsController extends Controller
     {
         try {
             $film = new Film($request->all());
+            $uploadedFile= $request->file('pochette_url');
             //dd($film);
             //dd($request);
+            $nomFichierUnique = str_replace(' ', '_', $film->titre) . '-' . uniqid() . '.' . $uploadedFile->extension();
+            try
+            {
+                $request->pochette_url->move(public_path('img/films'), $nomFichierUnique);
+            }
+            catch(\Symfony\Component\HttpFoundation\File\Exception\FileException $e) {
+                Log::error("Erreur lors du téléversement du fichier. ", [$e]);
+                }
             $film->save();
+            
+
             $film->genres()->attach($request->input('genre_id'), ['created_at' => now(), 'updated_at' => now()]);
             $film->acteurs()->attach($request->input('personne_id'), ['created_at' => now(), 'updated_at' => now()]);
             $film->langues()->attach($request->input('langue_id'), ['created_at' => now(), 'updated_at' => now()]);
             $film->sous_titres()->attach($request->input('sous_titre_id'), ['created_at' => now(), 'updated_at' => now()]);
+            return redirect()->route('netflix')->with('message', "Ajout du film " . $film->titre . " réussi!");
         } catch (\Throwable $e) {
             Log::debug($e);
+            return redirect()->route('netflix')->withErrors(['l\'ajout n\'a pas fonctionné']);
+
         }
         return redirect()->route('netflix');
     }

@@ -23,7 +23,7 @@ use App\HTTP\Controllers\UsagersController;
     return view('welcome');
 });*/
 
-Route::get('netflixs', [NetflixsController::class, 'index'])->name('netflix')->middleware('auth');
+Route::get('/', [NetflixsController::class, 'index'])->name('netflix')->middleware('auth');
 
 Route::get('/films/creation', [FilmsController::class, 'create'])->name('films.create')->middleware('auth');
 
