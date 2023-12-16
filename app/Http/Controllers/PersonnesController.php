@@ -70,7 +70,6 @@ class PersonnesController extends Controller
         //return redirect()->route('personnes.create');
         return redirect()->route('personnes.liste');
         
-
         //return View('personnes.create');
     }
 
