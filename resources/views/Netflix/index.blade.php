@@ -254,10 +254,10 @@
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    <a href="{{ route('films.edit', [$film]) }}" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
                                         aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
-                                        Watch
+                                        Modifier
                                     </a>
                                 </div>
                             </div>
