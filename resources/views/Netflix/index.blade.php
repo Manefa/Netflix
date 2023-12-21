@@ -4,6 +4,23 @@
 
 @section('contenu')
     @auth
+        @if (\Session::has('message'))
+            <div id="success-alert" class="alert alert-success" role="alert">
+                {{ session('message') }}
+            </div>
+            <script>
+                // Attendre que le document soit chargé
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Sélectionner l'élément avec l'ID 'success-alert'
+                    var successAlert = document.getElementById('success-alert');
+
+                    // Masquer l'alerte après 5 secondes
+                    setTimeout(function() {
+                        successAlert.style.display = 'none';
+                    }, 5000);
+                });
+            </script>
+        @endif
         <!-- Slider - OPEN -->
         <div id="mainCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -237,11 +254,10 @@
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="{{ route('films.edit', [$film]) }}" 
-                                        class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                    <a href="#" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
                                         aria-pressed="true">
                                         <img src="media/icons/play.png" width="10" alt="">
-                                        Modifier
+                                        Watch
                                     </a>
                                 </div>
                             </div>
@@ -440,5 +456,17 @@
             </div>
         </div>
     @endauth
+    <!-- JQuery -->
+    <script src="js/jquery.min.js"></script>
+    <!-- JQuery UI -->
+    <script src="js/jquery-ui.min.js" defer></script>
+    <!-- Pooper JS -->
+    <script src="js/popper.min.js" defer></script>
+    <!-- Bootstrap 4.4.1 -->
+    <script src="js/bootstrap.min.js" defer></script>
+    <!-- Flickity 2.2.1 -->
+    <script src="js/flickity.min.js" defer></script>
+    <!-- Main JS -->
+    <script src="js/main.js" defer></script>
 
 @endsection

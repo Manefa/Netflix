@@ -65,6 +65,8 @@ class FilmsController extends Controller
             $film->langues()->attach($request->input('langue_id'), ['created_at' => now(), 'updated_at' => now()]);
             $film->sous_titres()->attach($request->input('sous_titre_id'), ['created_at' => now(), 'updated_at' => now()]);
             return redirect()->route('netflix')->with('message', "Ajout du film " . $film->titre . " réussi!");
+            //return redirect()->route('netflix', ['success' => "Ajout du film " . $film->titre . " réussi!"]);
+
         } catch (\Throwable $e) {
             Log::debug($e);
             return redirect()->route('netflix')->withErrors(['l\'ajout n\'a pas fonctionné']);
