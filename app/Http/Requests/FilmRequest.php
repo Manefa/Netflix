@@ -34,10 +34,7 @@ class FilmRequest extends FormRequest
             // 'pochette_url' => 'required|active_url|min:2|max:100',
             'cote' => 'required|integer|between:0,100',
             'notation' => 'required|string|min:2|max:50',
-            'genre_id[]' => 'required',
-            'personne_id[]' => 'required',
-            'langue_id[]' => 'required',
-            'sous_titre_id[]' => 'required'
+
 
 
         ];
@@ -95,10 +92,7 @@ class FilmRequest extends FormRequest
             'notation.min' => 'La notation doit avoir au moins 2 caractères.',
             'notation.max' => 'La notation ne peut pas dépasser 50 caractères.',
         
-            'genre_id[].required' => 'Au moins un genre doit être sélectionné.',
-            'personne_id[].required' => 'Au moins une personne doit être associée au film.',
-            'langue_id[].required' => 'Au moins une langue doit être associée au film.',
-            'sous_titre_id[].required' => 'Au moins un sous-titre doit être associé au film.',
+
             
         ];
     }
