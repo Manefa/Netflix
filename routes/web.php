@@ -32,7 +32,7 @@ Route::post('/films', [FilmsController::class, 'store'])->name('films.store')->m
 
 Route::get('/films/{film}/', [FilmsController::class, 'show'])->name('films.show')->middleware('auth');
 
-Route::get('/films/parGenre', [FilmsController::class, 'filmsParGenre'])->name('films.parGenre')->middleware('auth');
+Route::get('/films/parGenre/filtre', [FilmsController::class, 'filmsParGenre'])->name('films.parGenre')->middleware('auth');
 
 
 /*Personne Route Bigin*/

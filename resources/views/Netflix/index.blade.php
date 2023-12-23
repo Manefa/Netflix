@@ -254,11 +254,14 @@
                                         <img src="media/icons/info.png" width="10" alt="">
                                         Info
                                     </a>
-                                    <a href="{{ route('films.edit', [$film]) }}" class="btn btn-primary btn-sm margin-top-under-sm" role="button"
-                                        aria-pressed="true">
-                                        <img src="media/icons/play.png" width="10" alt="">
-                                        Modifier
-                                    </a>
+                                    @role('admin')
+                                        <a href="{{ route('films.edit', [$film]) }}"
+                                            class="btn btn-primary btn-sm margin-top-under-sm" role="button"
+                                            aria-pressed="true">
+                                            <img src="media/icons/play.png" width="10" alt="">
+                                            Modifier
+                                        </a>
+                                    @endrole
                                 </div>
                             </div>
                         </div>
@@ -406,7 +409,7 @@
                                                 {{ $film->cote }}
                                             </div>
                                         </div>
-                                        
+
                                     </div>
 
                                     <!-- Beasts of No Nation - OPEN -->
